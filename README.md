@@ -1,6 +1,6 @@
 # Playwright Practice Suite - Template Branch
 
-## ⚠️ RAMA TEMPLATE - Para Práctica
+## RAMA TEMPLATE - Para Práctica
 
 Esta es la **rama template** del proyecto. Los tests están en formato TODO para que practiques escribiendo el código desde cero.
 
@@ -54,12 +54,12 @@ test('example test', async ({ page }) => {
   // TODO: Paso 1 - Navegar a la página
   // Usa page.goto() con la ruta '/p/playwrightpractice.html'
   
-  // 👈 Escribe tu código aquí
+  // Escribe tu código aquí
   
   // TODO: Paso 2 - Localizar el elemento
   // Usa page.getByRole() apropiado
   
-  // 👈 Escribe tu código aquí
+  // Escribe tu código aquí
 });
 ```
 
@@ -183,7 +183,7 @@ test('nombre del test', async ({ page }) => {
   // Instrucciones de qué API usar
   // Ejemplo de sintaxis
   
-  // 👈 Escribe tu código aquí
+  // Escribe tu código aquí
   
   // TODO: Paso 2 - Siguiente acción
   // ...
