@@ -16,7 +16,7 @@ Suite de tests end-to-end con 31 casos de prueba organizados en 6 categorías. C
 - Ejemplos de sintaxis y hints de APIs de Playwright
 - Espacios para escribir tu código
 
-**Categorías:**
+### Categorías
 
 - **Locators**: 7 estrategias diferentes de localización (getByRole, getByText, getByLabel, etc.)
 - **Tables**: Interacción con tablas estáticas y con paginación
@@ -371,31 +371,36 @@ y mejores prácticas
 
 ### Problemas comunes
 
-**Error: "browserType.launch: Executable doesn't exist"**
+#### Error: "browserType.launch: Executable doesn't exist"
+
 ```bash
 # Solución: Instalar browsers de Playwright
 npx playwright install
 ```
 
-**Error: "Cannot find module '@playwright/test'"**
+#### Error: "Cannot find module '@playwright/test'"
+
 ```bash
 # Solución: Instalar dependencias
 npm install
 ```
 
-**Tests muy lentos**
+#### Tests muy lentos
+
 ```bash
 # Solución: Ejecutar solo el test que necesitas
 npx playwright test nombre-del-test.spec.ts
 ```
 
-**Puerto ya en uso**
+#### Puerto ya en uso
+
 ```bash
 # Si la página de práctica no carga, verifica que no haya conflictos de puerto
 # Playwright usa la baseURL configurada en playwright.config.ts
 ```
 
-**Versión de Node.js incompatible**
+#### Versión de Node.js incompatible
+
 ```bash
 # Verifica que estés usando una versión LTS de Node.js
 node --version
