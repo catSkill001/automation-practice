@@ -27,13 +27,57 @@ Suite de tests end-to-end con 31 casos de prueba organizados en 6 categorías. C
 
 ## Prerrequisitos
 
-- Node.js (versión LTS recomendada)
-- npm
+### Software necesario
+
+- **Node.js** - Versión LTS (Long Term Support) más reciente
+  - Verifica tu versión: `node --version`
+  - Descarga desde: [nodejs.org](https://nodejs.org/)
+  - Se recomienda usar la versión LTS activa
+
+- **npm** - Incluido con Node.js
+  - Verifica tu versión: `npm --version`
+
+- **Git** - Para clonar el repositorio
+  - Verifica: `git --version`
+
+### Extensiones recomendadas para VS Code
+
+El proyecto incluye un archivo `.vscode/extensions.json` que recomienda automáticamente:
+
+- **Playwright Test for VSCode** (`ms-playwright.playwright`) - Ejecutar y debug tests
+- **ESLint** (`dbaeumer.vscode-eslint`) - Linting de código
+- **Prettier** (`esbenp.prettier-vscode`) - Formateo de código
+- **GitLens** (`eamodio.gitlens`) - Git supercharged
+
+VS Code te sugerirá instalarlas al abrir el proyecto.
 
 ## Instalación
 
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/catSkill001/automation-practice.git
+cd automation-practice
+```
+
+### 2. Instalar dependencias
+
 ```bash
 npm install
+```
+
+### 3. Instalar browsers de Playwright
+
+```bash
+npx playwright install
+```
+
+Esto descarga Chromium, Firefox y WebKit.
+
+### 4. Verificar instalación
+
+```bash
+npx playwright test --version
 ```
 
 ## Cómo usar esta rama
@@ -322,6 +366,48 @@ y mejores prácticas
 3. **Validaciones**: Siempre usar `expect()` después de interacciones
 4. **Page Object Model**: Para proyectos reales, considera POM para mantenibilidad
 5. **Selectores robustos**: Evitar selectores frágiles como IDs generados o XPaths complejos
+
+## Troubleshooting
+
+### Problemas comunes
+
+**Error: "browserType.launch: Executable doesn't exist"**
+```bash
+# Solución: Instalar browsers de Playwright
+npx playwright install
+```
+
+**Error: "Cannot find module '@playwright/test'"**
+```bash
+# Solución: Instalar dependencias
+npm install
+```
+
+**Tests muy lentos**
+```bash
+# Solución: Ejecutar solo el test que necesitas
+npx playwright test nombre-del-test.spec.ts
+```
+
+**Puerto ya en uso**
+```bash
+# Si la página de práctica no carga, verifica que no haya conflictos de puerto
+# Playwright usa la baseURL configurada en playwright.config.ts
+```
+
+**Versión de Node.js incompatible**
+```bash
+# Verifica que estés usando una versión LTS de Node.js
+node --version
+
+# Si no, actualiza a la versión LTS desde nodejs.org
+```
+
+### Obtener ayuda
+
+- **Documentación oficial**: [playwright.dev/docs](https://playwright.dev/docs)
+- **GitHub Issues**: [github.com/microsoft/playwright/issues](https://github.com/microsoft/playwright/issues)
+- **Discord**: [discord.gg/playwright](https://discord.gg/playwright)
 
 ## Próximos pasos
 
