@@ -2,6 +2,34 @@
 
 Proyecto de práctica para automatización de pruebas web usando Playwright.
 
+## 🌿 Estructura de Ramas
+
+Este repositorio tiene dos ramas con propósitos específicos:
+
+- **`main`** (actual): Implementación completa con todos los tests resueltos. Úsala como referencia para ver las soluciones.
+- **`template`**: Tests con estructura vacía y comentarios TODO. Úsala como base para practicar.
+
+### 📝 Flujo de Trabajo para Practicar
+
+1. Crear rama desde `template`:
+   ```bash
+   git checkout template
+   git checkout -b practice/nombre-ejercicio
+   ```
+
+2. Completar los tests siguiendo los TODOs
+
+3. Push de tu rama:
+   ```bash
+   git add .
+   git commit -m "Complete ejercicio"
+   git push origin practice/nombre-ejercicio
+   ```
+
+4. El CI corre automáticamente y te da feedback en la pestaña **Actions** de GitHub
+
+5. Si necesitas ver la solución, consulta la rama `main`
+
 ## Descripción
 
 Colección de tests automatizados para practicar diferentes funcionalidades de Playwright, enfocados en interacciones comunes de páginas web.
