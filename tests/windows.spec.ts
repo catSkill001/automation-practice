@@ -83,11 +83,13 @@ test('close opened window', async ({ page, context }) => {
   ]);
 
   await newPage.waitForLoadState();
-  await expect(newPage).not.toBeClosed();
+  
+  // Validar que la nueva página está abierta (tiene contenido)
+  await expect(newPage.getByRole('heading')).toBeVisible();
 
   // Cerrar ventana
   await newPage.close();
 
-  // Validar que se cerró (la página original sigue activa)
-  await expect(page).toBeVisible();
+  // Validar que se cerró (la página original sigue activa verificando su contenido)
+  await expect(page.getByRole('heading', { name: /Automation Testing Practice/i })).toBeVisible();
 });
