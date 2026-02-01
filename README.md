@@ -8,7 +8,7 @@ Esta es la **rama template** del proyecto. Los tests están en formato TODO para
 
 ## Descripción
 
-Suite de tests end-to-end con 31 casos de prueba organizados en 6 categorías. Cada test incluye:
+Suite de tests end-to-end con **53 casos de prueba** organizados en 10 categorías. Cada test incluye:
 
 - Documentación JSDoc completa con objetivo y conceptos clave
 - TODOs numerados paso a paso (Paso 1, Paso 2, etc.)
@@ -16,14 +16,21 @@ Suite de tests end-to-end con 31 casos de prueba organizados en 6 categorías. C
 - Ejemplos de sintaxis y hints de APIs de Playwright
 - Espacios para escribir tu código
 
-### Categorías
+### Tests Básicos (31 ejercicios - TC-001 a TC-023)
 
-- **Locators**: 7 estrategias diferentes de localización (getByRole, getByText, getByLabel, etc.)
-- **Tables**: Interacción con tablas estáticas y con paginación
-- **Interactions**: Alertas, mouse actions, drag & drop, sliders
-- **Files**: Upload de archivos individuales y múltiples
-- **Navigation**: Tabs, ventanas y contenido dinámico
-- **Advanced DOM**: iframes y Shadow DOM para entrevistas técnicas
+- **Locators** (7 tests): 7 estrategias de localización (getByRole, getByText, getByLabel, getByPlaceholder, getByAltText, getByTitle, getByTestId)
+- **Tables** (2 tests): Interacción con tablas estáticas y con paginación
+- **Interactions** (8 tests): Alertas, mouse actions, drag & drop, sliders
+- **Files** (4 tests): Upload de archivos individuales y múltiples
+- **Navigation** (4 tests): Tabs, ventanas y contenido dinámico
+- **Advanced DOM** (6 tests): iframes y Shadow DOM para entrevistas técnicas
+
+### Features Avanzadas (22 ejercicios - TC-024 a TC-045)
+
+- **API Tests** (5 tests - TC-024 a TC-028): Testing de APIs REST sin browser
+- **Visual Regression** (5 tests - TC-029 a TC-033): Detección de cambios visuales con screenshots
+- **Accessibility** (6 tests - TC-034 a TC-039): Validación WCAG con axe-core
+- **Page Object Model** (6 tests - TC-040 a TC-045): Patrón de diseño para mantenibilidad
 
 ## Prerrequisitos
 
@@ -143,6 +150,12 @@ npx playwright test files --headed
 npx playwright test navigation
 npx playwright test advanced-dom
 
+# Features avanzadas
+npx playwright test api                 # API tests (5)
+npx playwright test visual              # Visual regression (5)
+npx playwright test accessibility       # Accessibility (6)
+npx playwright test pom                 # Page Object Model (6)
+
 # Tests específicos
 npx playwright test frames              # Solo iframes
 npx playwright test shadow-dom          # Solo Shadow DOM
@@ -162,24 +175,57 @@ npx playwright show-report
 
 ### Orden sugerido (de fácil a difícil)
 
-1. **Locators** (10 tests) - Empieza aquí
+#### Nivel 1: Fundamentos (Tests básicos)
+
+1. **Locators** (7 tests) - Empieza aquí
    - getByRole → getByText → getByLabel → getByPlaceholder
    - getByAltText → getByTitle → getByTestId
 
-2. **Interactions** (7 tests) - Acciones básicas
+2. **Interactions** (8 tests) - Acciones básicas
    - alerts → mouse-actions → drag-drop → slider
 
 3. **Tables** (2 tests) - Datos tabulares
    - Tabla estática → Tabla con paginación
 
-4. **Files** (2 tests) - Upload de archivos
+4. **Files** (4 tests) - Upload de archivos
    - Single file → Multiple files
 
-5. **Navigation** (2 tests) - Navegación avanzada
+5. **Navigation** (4 tests) - Navegación avanzada
    - windows-tabs → dynamic-content
 
-6. **Advanced DOM** (8 tests) - Conceptos para entrevistas
-   - frames (3 tests) → shadow-dom (5 tests)
+6. **Advanced DOM** (6 tests) - Conceptos para entrevistas
+   - frames → shadow-dom
+
+#### Nivel 2: Features Avanzadas
+
+7. **API Tests** (5 tests - TC-024 a TC-028)
+   - GET requests básicos
+   - POST requests con data
+   - Validación de arrays
+   - Headers personalizados
+   - Manejo de errores 404
+
+8. **Visual Regression** (5 tests - TC-029 a TC-033)
+   - Screenshots de página completa
+   - Screenshots de elementos específicos
+   - Máscaras para contenido dinámico
+   - Thresholds personalizados
+   - Estados específicos de UI
+
+9. **Accessibility** (6 tests - TC-034 a TC-039)
+   - Scan completo con axe-core
+   - Validación WCAG Level A/AA
+   - Accesibilidad de formularios
+   - Exclusión de elementos third-party
+   - Validación de contraste de colores
+   - Reportes detallados
+
+10. **Page Object Model** (6 tests - TC-040 a TC-045)
+    - Implementar base.page.ts
+    - Implementar practice.page.ts con locators
+    - Tests usando POM
+    - Comparación con/sin POM
+    - Fluent API patterns
 
 ### Tips para aprender
 
@@ -188,6 +234,7 @@ npx playwright show-report
 - **Lee la documentación JSDoc**: Cada test explica los conceptos clave
 - **Compara con main**: Si te atoras, revisa la solución en la rama main
 - **Practica sin copiar**: Intenta escribir el código de memoria primero
+- **Features avanzadas**: Requieren instalación de dependencias adicionales (ver secciones específicas)
 
 ## Configuración
 
@@ -416,8 +463,107 @@ node --version
 
 ## Próximos pasos
 
-- [ ] Agregar tests de API con `request` fixture
-- [ ] Implementar Page Object Model
-- [ ] Agregar tests de accesibilidad con `@axe-core/playwright`
-- [ ] Tests de visual regression con `@playwright/test`
-- [ ] Configurar CI/CD con GitHub Actions
+Una vez que completes los tests básicos (TC-001 a TC-023), puedes continuar con features avanzadas:
+
+### API Testing (TC-024 a TC-028)
+
+**Qué aprenderás:**
+- Testing de APIs REST sin abrir browser
+- Validación de responses JSON
+- Manejo de headers personalizados
+- Status codes y error handling
+
+**Instalación:**
+No requiere instalación adicional, usa el fixture `request` incluido en Playwright.
+
+**Ubicación:** `tests/playwright-practice/api/api-tests.spec.ts`
+
+**Ejercicios:**
+- TC-024: GET request básico con validación
+- TC-025: POST request creando recursos
+- TC-026: Validar y filtrar arrays
+- TC-027: Enviar headers personalizados
+- TC-028: Manejar errores 404
+
+### Visual Regression Testing (TC-029 a TC-033)
+
+**Qué aprenderás:**
+- Capturar y comparar screenshots
+- Detectar cambios visuales inesperados
+- Usar máscaras para contenido dinámico
+- Configurar thresholds de tolerancia
+
+**Primera ejecución:**
+```bash
+npx playwright test visual --update-snapshots
+```
+
+**Validación posterior:**
+```bash
+npx playwright test visual
+```
+
+**Ubicación:** `tests/playwright-practice/visual/visual-regression.spec.ts`
+
+**Ejercicios:**
+- TC-029: Screenshot de página completa
+- TC-030: Screenshot de elemento específico
+- TC-031: Máscaras para elementos dinámicos
+- TC-032: Threshold personalizado
+- TC-033: Capturar estados específicos (modals, dropdowns)
+
+### Accessibility Testing (TC-034 a TC-039)
+
+**Qué aprenderás:**
+- Validar cumplimiento WCAG
+- Detectar problemas de accesibilidad
+- Validar contraste de colores
+- Generar reportes detallados
+
+**Instalación:**
+```bash
+npm install --save-dev @axe-core/playwright
+```
+
+**Ubicación:** `tests/playwright-practice/accessibility/accessibility.spec.ts`
+
+**Ejercicios:**
+- TC-034: Scan completo de página
+- TC-035: Validación WCAG Level A/AA
+- TC-036: Accesibilidad de formularios
+- TC-037: Excluir elementos third-party
+- TC-038: Validación de contraste de colores
+- TC-039: Reporte detallado con todos los datos
+
+**Niveles WCAG:**
+- Level A: Requisitos básicos mínimos
+- Level AA: Estándar recomendado (incluye contraste 4.5:1)
+- Level AAA: Nivel más alto (contraste 7:1)
+
+### Page Object Model (TC-040 a TC-045)
+
+**Qué aprenderás:**
+- Implementar el patrón POM
+- Centralizar locators en clases
+- Crear métodos reutilizables
+- Mejorar mantenibilidad de tests
+
+**Archivos a implementar:**
+1. `pages/base.page.ts` - Clase base con funcionalidad común
+2. `pages/practice.page.ts` - Page object con locators de la página
+3. `tests/playwright-practice/pom/pom-examples.spec.ts` - Tests usando POM
+
+**Ejercicios:**
+- TC-040: Interacción básica con botones
+- TC-041: Llenar formulario con método de alto nivel
+- TC-042: Seleccionar opciones (radio/checkboxes)
+- TC-043: Manejar alerts con POM
+- TC-044: Leer datos de tabla
+- TC-045: Workflow completo usando POM
+
+**Ventajas del POM:**
+- Centralización: Locators en un solo lugar
+- Reutilización: Métodos compartidos entre tests
+- Mantenibilidad: Cambios en UI solo actualizan el page object
+- Legibilidad: Tests enfocados en el negocio, no en la implementación
+- Type-safe: TypeScript valida uso correcto
