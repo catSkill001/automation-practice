@@ -8,7 +8,7 @@ Suite de tests end-to-end que cubre desde localizadores básicos hasta conceptos
 
 ### Tests Básicos (31 tests)
 
-- **Locators** (7 tests): Estrategias de localización (getByRole, getByText, getByLabel, etc.)
+- **Locators** (7 tests): Estrategias de localización (getByRole, getByText, getByLabel, getByPlaceholder, getByAltText, getByTitle, getByTestId)
 - **Tables** (2 tests): Interacción con tablas estáticas y con paginación
 - **Interactions** (8 tests): Alertas, mouse actions, drag & drop, sliders
 - **Files** (4 tests): Upload y download de archivos
@@ -79,7 +79,7 @@ npx playwright show-report
 
 Cada test incluye:
 
-- **ID de caso de prueba** (TC-001, TC-002, etc.)
+- **ID de caso de prueba** (TC-001 hasta TC-053)
 - **Documentación JSDoc detallada** con descripción, objetivo y conceptos clave
 - **Comentarios inline** explicando cada paso
 - **Ejemplos de uso** de las APIs de Playwright
@@ -88,7 +88,7 @@ Cada test incluye:
 
 ## Conceptos clave cubiertos
 
-### Locators (getByRole, getByText, getByLabel, etc.)
+### Locators (7 estrategias de localización)
 
 Interacción con contenido dentro de iframes:
 
@@ -105,7 +105,7 @@ await frame.locator('input').fill('test');
 
 Playwright ofrece múltiples estrategias de localización semánticas que priorizan accesibilidad:
 
-- `getByRole()`: Localiza por rol ARIA (button, textbox, heading, etc.)
+- `getByRole()`: Localiza por rol ARIA (button, textbox, heading, link, checkbox, radio, combobox, listbox, menuitem, tab, img, table, row, cell)
 - `getByText()`: Busca por texto visible exacto o regex
 - `getByLabel()`: Asocia con labels de formularios
 - `getByPlaceholder()`: Usa el atributo placeholder
