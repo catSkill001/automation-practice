@@ -2,6 +2,35 @@
 
 Proyecto de práctica para automatización de pruebas web usando Playwright.
 
+## 🎯 ¡Estás en la rama de práctica!
+
+Esta es la rama **`template`** con tests incompletos. Sigue estos pasos:
+
+### 📋 Instrucciones
+
+1. **Crea tu rama de práctica:**
+   ```bash
+   git checkout -b practice/tu-nombre
+   ```
+
+2. **Completa los tests** en la carpeta `tests/`. Busca los comentarios `TODO` que te guiarán.
+
+3. **Valida localmente:**
+   ```bash
+   npx playwright test
+   ```
+
+4. **Push para obtener feedback del CI:**
+   ```bash
+   git add .
+   git commit -m "Complete ejercicio X"
+   git push origin practice/tu-nombre
+   ```
+
+5. **Revisa los resultados** en la pestaña **Actions** de GitHub. El CI ejecutará automáticamente tus tests.
+
+6. **¿Necesitas ayuda?** Consulta la rama `main` para ver las soluciones completas.
+
 ## Descripción
 Colección de tests automatizados para practicar diferentes funcionalidades de Playwright, enfocados en interacciones comunes de páginas web.
 
