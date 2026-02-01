@@ -92,6 +92,83 @@ npx playwright show-report
 
 **Total: 15 archivos de test con cobertura completa de la página**
 
+## Lista completa de casos de prueba
+
+### 📋 Básicos (1 test)
+- `smoke.spec.ts`
+  - • smoke - page loads
+
+### 🔔 Diálogos del navegador (4 tests)
+- `alerts.spec.ts`
+  - • simple alert - accept
+  - • confirmation alert - accept
+  - • confirmation alert - dismiss
+  - • prompt alert - input text and accept
+
+### 📝 Formularios (10 tests)
+- `forms.spec.ts`
+  - • fill input fields
+  - • fill textarea field
+  - • select checkboxes
+  - • select radio buttons
+
+- `dropdowns.spec.ts`
+  - • select from dropdown
+  - • select from dropdown by label
+  - • select multiple options from dropdown
+
+- `datepicker.spec.ts`
+  - • select date from datepicker
+  - • navigate months in datepicker
+  - • type date directly in datepicker
+
+### 🖱️ Interacciones (5 tests)
+- `doubleclick.spec.ts`
+  - • double click copies text from Field1 to Field2
+
+- `dragdrop.spec.ts`
+  - • drag element to target
+
+- `hover.spec.ts`
+  - • hover over element to show tooltip
+  - • hover to reveal dropdown menu
+  - • hover and click revealed element
+
+### 🎨 Componentes UI (11 tests)
+- `table.spec.ts`
+  - • validate data in static web table
+
+- `accordion.spec.ts`
+  - • expand and collapse accordion section
+  - • navigate multiple accordion sections
+  - • verify accordion section content
+
+- `tabs.spec.ts`
+  - • switch between tabs
+  - • verify tab content
+
+- `sliders.spec.ts`
+  - • drag slider to specific value
+  - • set slider to min and max values
+  - • drag slider with mouse
+
+- `resizable.spec.ts`
+  - • resize element by dragging
+  - • resize element with constraints
+
+### 🚀 Avanzados (6 tests)
+- `frames.spec.ts`
+  - • interact with iframe content
+  - • work with multiple iframes
+  - • switch frame context
+
+- `windows.spec.ts`
+  - • open and switch to new window
+  - • handle multiple windows
+  - • close opened window
+
+**Total: 37 casos de prueba organizados en 15 archivos**
+
 ### Archivos de configuración
 
 - `playwright.config.ts`: Configuración de Playwright con soporte para entornos
