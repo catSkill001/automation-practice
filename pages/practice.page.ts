@@ -134,10 +134,10 @@ export class PracticePage extends BasePage {
   
   // TODO: Define locator para la tabla de libros
   // Sintaxis: readonly bookTable: Locator = this.page.locator('#bookTable');
-  
+  readonly bookTable: Locator = this.page.locator('#bookTable');
   
   // TODO: Define locator para la tabla de productos
-  
+  readonly productTable: Locator = this.page.locator('#productTable');
   
   /*
   |--------------------------------------------------------------------------
@@ -310,7 +310,10 @@ export class PracticePage extends BasePage {
     //   const cells = await row.locator('td').all();
     //   const texts = await Promise.all(cells.map(cell => cell.textContent()));
     //   return texts.map(text => text || '');
-    
+    const row = this.bookTable.locator('tbody tr').nth(rowIndex);
+    const cells = await row.locator('td').all();
+    const texts = await Promise.all(cells.map((cell: Locator) => cell.textContent()));
+    return texts.map((text: string | null) => text || '');
   }
 
   /*
@@ -332,7 +335,7 @@ export class PracticePage extends BasePage {
     // TODO: Implementar conteo de filas
     // Usa this.productTable.locator('tbody tr').count()
     // Sintaxis: return await this.productTable.locator('tbody tr').count();
-    
+    return await this.productTable.locator('tbody tr').count();
   }
 
   /*

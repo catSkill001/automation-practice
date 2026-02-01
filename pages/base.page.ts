@@ -51,7 +51,7 @@ export class BasePage {
     // TODO: Asignar page a this.page
     // Esto hace que page esté disponible en todos los métodos
     // Sintaxis: this.page = page;
-    
+    this.page = page;
   }
 
   /*
@@ -76,7 +76,7 @@ export class BasePage {
     // TODO: Implementar navegación
     // Usa this.page.goto() con el parámetro url
     // Sintaxis: await this.page.goto(url);
-    
+    await this.page.goto(url);
   }
 
   /*
@@ -132,7 +132,7 @@ export class BasePage {
     // TODO: Implementar obtener título
     // Usa this.page.title() que retorna el título de la página
     // Sintaxis: return await this.page.title();
-    
+    return await this.page.title();
   }
 
   /*
@@ -165,7 +165,7 @@ export class BasePage {
     // - path: ruta donde guardar
     // - fullPage: si capturar toda la página
     // Sintaxis: return await this.page.screenshot({ path, fullPage });
-    
+    return await this.page.screenshot({ path, fullPage });
   }
 
   /*
