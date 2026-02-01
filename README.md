@@ -17,6 +17,7 @@ Suite de tests end-to-end con 31 casos de prueba organizados en 6 categorías. C
 - Espacios para escribir tu código
 
 **Categorías:**
+
 - **Locators**: 7 estrategias diferentes de localización (getByRole, getByText, getByLabel, etc.)
 - **Tables**: Interacción con tablas estáticas y con paginación
 - **Interactions**: Alertas, mouse actions, drag & drop, sliders
