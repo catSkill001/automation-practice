@@ -15,21 +15,13 @@ export default defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   
-  /* 
-   * Workers configuration:
-   * - Local: 4 workers (buen balance entre velocidad y estabilidad)
-   * - CI: undefined (usa 50% de CPU cores automáticamente)
-   * 
-   * Con 53 tests y 4 workers: ~1-2 minutos
-   * Con 53 tests y 1 worker: ~3-4 minutos
-   */
+  /* Optimal worker configuration */
   workers: process.env.CI ? undefined : 4,
   
   /* Reporter to use */
   reporter: 'html',
   
   use: {
-    // URL hardcodeada para práctica
     baseURL: 'https://testautomationpractice.blogspot.com',
     
     /* Collect trace when retrying the failed test */

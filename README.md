@@ -1,6 +1,4 @@
-# Automation Practice
-
-Proyecto de automatización con Playwright.
+# Playwright Automation
 
 ## Setup
 
@@ -9,7 +7,7 @@ npm install
 npx playwright install
 ```
 
-## Ejecutar tests
+## Running Tests
 
 ```bash
 # Modo headed (ver browser)
@@ -25,15 +23,15 @@ npx playwright test example.spec.ts
 npx playwright test --ui
 ```
 
-## Estructura
+## Structure
 
 ```
-tests/           # Test files
-pages/           # Page Objects
+tests/
+pages/
 playwright.config.ts
 ```
 
-## Recursos
+## Resources
 
 - [Playwright Docs](https://playwright.dev)
 - [Best Practices](https://playwright.dev/docs/best-practices)

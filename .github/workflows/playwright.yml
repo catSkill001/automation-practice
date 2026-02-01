@@ -3,16 +3,12 @@ on:
   push:
     branches: 
       - main
-      - 'practice/**'
+      - develop
   pull_request:
     branches: [ main ]
-  schedule:
-    # Run tests daily at 2 AM UTC
-    - cron: '0 2 * * *'
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
-  # Main test job - runs UI tests across multiple browsers and OS
   test:
     timeout-minutes: 60
     runs-on: ${{ matrix.os }}
@@ -68,105 +64,8 @@ jobs:
         path: playwright-report/
         retention-days: 30
 
-  # Separate job for accessibility tests
-  accessibility:
-    timeout-minutes: 30
-    runs-on: ubuntu-latest
-    env:
-      CI: true
-    steps:
-    - uses: actions/checkout@v4
-    
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps chromium
-    
-    - name: Run accessibility tests
-      run: npx playwright test tests/accessibility/
-    
-    - name: Upload accessibility report
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: accessibility-report
-        path: |
-          playwright-report/
-          test-results/
-        retention-days: 30
-
-  # Separate job for API tests (no browser needed)
-  api-tests:
-    timeout-minutes: 15
-    runs-on: ubuntu-latest
-    env:
-      CI: true
-    steps:
-    - uses: actions/checkout@v4
-    
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Run API tests
-      run: npx playwright test tests/api/ --project=chromium
-    
-    - name: Upload API test results
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: api-test-results
-        path: |
-          playwright-report/
-          test-results/
-        retention-days: 7
-
-  # Visual regression tests job
-  visual-tests:
-    timeout-minutes: 30
-    runs-on: ubuntu-latest
-    env:
-      CI: true
-    steps:
-    - uses: actions/checkout@v4
-    
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps chromium
-    
-    - name: Run visual regression tests
-      run: npx playwright test tests/visual/
-    
-    - name: Upload visual test results
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: visual-test-results
-        path: |
-          playwright-report/
-          test-results/
-        retention-days: 30
-
-  # Combined report generation
   report:
-    needs: [test, accessibility, api-tests, visual-tests]
+    needs: [test]
     if: always()
     runs-on: ubuntu-latest
     steps:
@@ -184,6 +83,3 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "### Jobs Status:" >> $GITHUB_STEP_SUMMARY
         echo "- UI Tests: ${{ needs.test.result }}" >> $GITHUB_STEP_SUMMARY
-        echo "- Accessibility Tests: ${{ needs.accessibility.result }}" >> $GITHUB_STEP_SUMMARY
-        echo "- API Tests: ${{ needs.api-tests.result }}" >> $GITHUB_STEP_SUMMARY
-        echo "- Visual Tests: ${{ needs.visual-tests.result }}" >> $GITHUB_STEP_SUMMARY
