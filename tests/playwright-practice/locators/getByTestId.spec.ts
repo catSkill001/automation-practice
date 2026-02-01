@@ -56,16 +56,25 @@ test.describe('getByTestId Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('verify testid section exists', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
     
-    // Verificar que la sección de getByTestId() es visible
-    // Buscamos el heading que explica este locator
-    await expect(page.getByText('7. getByTestId() Locators')).toBeVisible();
     
-    // Verificar que hay contenido de ejemplo en la sección
-    // john.doe@example.com es un ejemplo típico mostrado
-    await expect(page.getByText('john.doe@example.com')).toBeVisible();
+    
+    // TODO: Paso 2 - Verificar que el heading de la sección es visible
+    // Usa page.getByText('7. getByTestId() Locators') para localizar el título
+    // Luego usa expect().toBeVisible() para validar que se muestra
+    // Sintaxis: await expect(page.getByText('texto')).toBeVisible()
+    
+    
+    
+    // TODO: Paso 3 - Verificar que hay contenido de ejemplo visible
+    // Usa page.getByText('john.doe@example.com') para localizar el texto de ejemplo
+    // Luego usa expect().toBeVisible() para validar que se muestra
+    // Sintaxis: await expect(page.getByText('texto')).toBeVisible()
+    
+    
     
     /*
      * Nota: En una aplicación real, usaríamos:

@@ -53,25 +53,39 @@ test.describe('Tables', () => {
   |--------------------------------------------------------------------------
   */
   test('verify static table data', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
-    
-    // Localizar la primera tabla en la página
-    // .first() es necesario porque hay múltiples tablas
-    const table = page.locator('table').first();
-    
-    // Verificar que la tabla está visible
-    // Esto valida que la tabla se renderizó correctamente
-    await expect(table).toBeVisible();
-    
-    // Verificar que la tabla contiene el libro "Learn Selenium"
-    // getByText busca en toda la página, incluyendo dentro de la tabla
-    await expect(page.getByText('Learn Selenium')).toBeVisible();
-    
-    // Verificar que el autor "Amit" está presente
-    // .first() es necesario porque "Amit" aparece en múltiples filas
-    await expect(page.getByText('Amit').first()).toBeVisible();
-    
+    // Paso 1: Navegar a la página de práctica
+    // TODO: Usa page.goto() para navegar a '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
+
+
+
+    // Paso 2: Localizar la primera tabla en la página
+    // TODO: Crea una constante 'table' usando page.locator('table').first()
+    // Sintaxis: const table = page.locator(selector).first()
+    // Hint: .first() es necesario porque hay múltiples tablas en la página
+
+
+
+    // Paso 3: Verificar que la tabla está visible
+    // TODO: Usa expect(table).toBeVisible() para validar que la tabla se renderizó
+    // Sintaxis: await expect(elemento).toBeVisible()
+
+
+
+    // Paso 4: Verificar que la tabla contiene "Learn Selenium"
+    // TODO: Usa page.getByText('Learn Selenium') con expect().toBeVisible()
+    // Sintaxis: await expect(page.getByText(texto)).toBeVisible()
+    // Hint: getByText busca en toda la página, incluyendo dentro de la tabla
+
+
+
+    // Paso 5: Verificar que el autor "Amit" está presente
+    // TODO: Usa page.getByText('Amit').first() para localizar al autor
+    // Sintaxis: await expect(page.getByText(texto).first()).toBeVisible()
+    // Hint: .first() es necesario porque "Amit" aparece en múltiples filas
+
+
+
     /*
      * Otras validaciones útiles para tablas:
      * 
@@ -115,21 +129,32 @@ test.describe('Tables', () => {
   |--------------------------------------------------------------------------
   */
   test('interact with pagination table', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
-    
-    // Verificar que el producto "Smartphone" está en la primera página
-    // Este es el primer producto en la tabla de paginación
-    await expect(page.getByText('Smartphone')).toBeVisible();
-    
-    // Verificar que el precio "$10.99" es visible
-    // Valida que los precios están formateados con símbolo de dólar
-    await expect(page.getByText('$10.99')).toBeVisible();
-    
-    // Verificar que el heading de la sección existe
-    // Esto confirma que estamos validando la tabla correcta
-    await expect(page.getByText('Pagination Web Table')).toBeVisible();
-    
+    // Paso 1: Navegar a la página de práctica
+    // TODO: Usa page.goto() para navegar a '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
+
+
+
+    // Paso 2: Verificar que el producto "Smartphone" está visible
+    // TODO: Usa page.getByText('Smartphone') para localizar el producto
+    // Sintaxis: await expect(page.getByText(texto)).toBeVisible()
+    // Hint: Este es el primer producto en la tabla de paginación
+
+
+
+    // Paso 3: Verificar que el precio "$10.99" es visible
+    // TODO: Usa page.getByText('$10.99') para validar el precio
+    // Sintaxis: await expect(page.getByText(precio)).toBeVisible()
+    // Hint: Valida que los precios están formateados con símbolo de dólar
+
+
+
+    // Paso 4: Verificar que el heading de la sección existe
+    // TODO: Busca el texto 'Pagination Web Table' para confirmar la tabla correcta
+    // Sintaxis: await expect(page.getByText(heading)).toBeVisible()
+
+
+
     /*
      * Para navegar entre páginas:
      * 

@@ -9,29 +9,39 @@ import { test, expect } from '@playwright/test';
 | - Interactuar con elementos encapsulados
 */
 test('access element inside shadow dom', async ({ page }) => {
-  await page.goto('/');
+  // Paso 1: Navegar a la página raíz
+  
+  
 
-  // Acceder al input de texto dentro del Shadow DOM
-  const inputValue = await page.evaluate(() => {
-    const shadowHost = document.querySelector('#shadow_host');
-    if (!shadowHost || !(shadowHost as any).shadowRoot) {
-      throw new Error('Shadow host not found');
-    }
-    
-    const shadowRoot = (shadowHost as any).shadowRoot;
-    const input = shadowRoot.querySelector('input[type="text"]') as HTMLInputElement;
-    
-    if (!input) {
-      throw new Error('Text input not found in shadow DOM');
-    }
-    
-    // Escribir en el input
-    input.value = 'Shadow DOM Test';
-    return input.value;
-  });
+  // Paso 2: Usar page.evaluate() para acceder al Shadow DOM
+  // Sintaxis: await page.evaluate(() => { código_javascript })
+  // TODO: Dentro del evaluate:
+  //   - Obtener el elemento con id='shadow_host' usando document.querySelector
+  //   - Validar que shadowHost y shadowHost.shadowRoot existen
+  //   - Obtener el shadowRoot del host
+  //   - Buscar el input type="text" dentro del shadowRoot
+  //   - Establecer input.value = 'Shadow DOM Test'
+  //   - Retornar el valor del input
+  // Hint: Usa shadowRoot.querySelector para buscar dentro del Shadow DOM
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  // Validar que el valor se ingresó
-  expect(inputValue).toBe('Shadow DOM Test');
+  // Paso 3: Validar que el valor retornado es correcto
+  // Sintaxis: expect(valor).toBe('esperado')
+  
+  
 });
 
 /*
@@ -43,29 +53,35 @@ test('access element inside shadow dom', async ({ page }) => {
 | - Validar acción
 */
 test('click checkbox inside shadow dom', async ({ page }) => {
-  await page.goto('/');
+  // Paso 1: Navegar a la página raíz
+  
+  
 
-  // Hacer click en el checkbox dentro del Shadow DOM
-  const isChecked = await page.evaluate(() => {
-    const shadowHost = document.querySelector('#shadow_host');
-    if (!shadowHost || !(shadowHost as any).shadowRoot) {
-      throw new Error('Shadow host not found');
-    }
-    
-    const shadowRoot = (shadowHost as any).shadowRoot;
-    const checkbox = shadowRoot.querySelector('input[type="checkbox"]') as HTMLInputElement;
-    
-    if (!checkbox) {
-      throw new Error('Checkbox not found in shadow DOM');
-    }
-    
-    // Hacer click
-    checkbox.click();
-    return checkbox.checked;
-  });
+  // Paso 2: Usar page.evaluate() para hacer click en checkbox del Shadow DOM
+  // TODO: Dentro del evaluate:
+  //   - Obtener shadowHost con id='shadow_host'
+  //   - Validar que existe shadowHost y shadowRoot
+  //   - Obtener el checkbox usando shadowRoot.querySelector('input[type="checkbox"]')
+  //   - Hacer click en el checkbox
+  //   - Retornar checkbox.checked
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  // Validar que el checkbox fue marcado
-  expect(isChecked).toBe(true);
+  // Paso 3: Validar que el checkbox está marcado
+  // Sintaxis: expect(valor).toBe(true)
+  
+  
 });
 
 /*
@@ -77,23 +93,31 @@ test('click checkbox inside shadow dom', async ({ page }) => {
 | - Validar estructura
 */
 test('access nested shadow dom', async ({ page }) => {
-  await page.goto('/');
+  // Paso 1: Navegar a la página raíz
+  
+  
 
-  // Verificar que existe el Shadow DOM anidado
-  const nestedExists = await page.evaluate(() => {
-    const shadowHost = document.querySelector('#shadow_host');
-    if (!shadowHost || !(shadowHost as any).shadowRoot) {
-      return false;
-    }
-    
-    const shadowRoot = (shadowHost as any).shadowRoot;
-    const nestedHost = shadowRoot.querySelector('#nested_shadow_host');
-    
-    return nestedHost !== null;
-  });
+  // Paso 2: Verificar que existe Shadow DOM anidado usando page.evaluate()
+  // TODO: Dentro del evaluate:
+  //   - Obtener shadowHost con id='shadow_host'
+  //   - Si no existe shadowHost o shadowRoot, retornar false
+  //   - Obtener shadowRoot del host
+  //   - Buscar elemento con id='nested_shadow_host' dentro del shadowRoot
+  //   - Retornar true si nestedHost existe, false si no
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  // Validar que el nested shadow host existe
-  expect(nestedExists).toBe(true);
+  // Paso 3: Validar que el nested shadow host existe
+  // Sintaxis: expect(valor).toBe(true)
+  
+  
 });
 
 /*
@@ -105,27 +129,34 @@ test('access nested shadow dom', async ({ page }) => {
 | - Validar contenido
 */
 test('get text from shadow dom element', async ({ page }) => {
-  await page.goto('/');
+  // Paso 1: Navegar a la página raíz
+  
+  
 
-  // Obtener el texto del span dentro del Shadow DOM
-  const spanText = await page.evaluate(() => {
-    const shadowHost = document.querySelector('#shadow_host');
-    if (!shadowHost || !(shadowHost as any).shadowRoot) {
-      throw new Error('Shadow host not found');
-    }
-    
-    const shadowRoot = (shadowHost as any).shadowRoot;
-    const span = shadowRoot.querySelector('#shadow_content .info') as HTMLSpanElement;
-    
-    if (!span) {
-      throw new Error('Span not found in shadow DOM');
-    }
-    
-    return span.textContent;
-  });
+  // Paso 2: Obtener texto de un span dentro del Shadow DOM usando page.evaluate()
+  // TODO: Dentro del evaluate:
+  //   - Obtener shadowHost con id='shadow_host'
+  //   - Validar que shadowHost y shadowRoot existen (lanzar error si no)
+  //   - Obtener shadowRoot
+  //   - Buscar el span con selector '#shadow_content .info'
+  //   - Validar que el span existe (lanzar error si no)
+  //   - Retornar span.textContent
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  // Validar que el texto es correcto
-  expect(spanText).toBe('Mobiles');
+  // Paso 3: Validar que el texto es 'Mobiles'
+  
+  
 });
 
 /*
@@ -137,21 +168,29 @@ test('get text from shadow dom element', async ({ page }) => {
 | - Contar inputs disponibles
 */
 test('query multiple elements in shadow dom', async ({ page }) => {
-  await page.goto('/');
+  // Paso 1: Navegar a la página raíz
+  
+  
 
-  // Obtener todos los inputs dentro del Shadow DOM
-  const inputCount = await page.evaluate(() => {
-    const shadowHost = document.querySelector('#shadow_host');
-    if (!shadowHost || !(shadowHost as any).shadowRoot) {
-      throw new Error('Shadow host not found');
-    }
-    
-    const shadowRoot = (shadowHost as any).shadowRoot;
-    const inputs = shadowRoot.querySelectorAll('input');
-    
-    return inputs.length;
-  });
+  // Paso 2: Contar todos los inputs dentro del Shadow DOM usando page.evaluate()
+  // TODO: Dentro del evaluate:
+  //   - Obtener shadowHost con id='shadow_host'
+  //   - Validar que shadowHost y shadowRoot existen
+  //   - Obtener shadowRoot
+  //   - Usar querySelectorAll('input') para obtener todos los inputs
+  //   - Retornar inputs.length
+  // Hint: querySelectorAll retorna una NodeList con propiedad length
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  // Validar que hay 3 inputs (text, checkbox, file)
-  expect(inputCount).toBe(3);
+  // Paso 3: Validar que hay 3 inputs (text, checkbox, file)
+  
+  
 });

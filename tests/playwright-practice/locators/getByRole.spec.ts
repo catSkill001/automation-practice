@@ -48,19 +48,27 @@ test.describe('getByRole Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('interact with buttons using getByRole', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Ejemplo: await page.goto('ruta-aqui');
     
-    // Localizar el botón "Primary Action" usando su rol ARIA
-    // Playwright busca elements con role="button" y nombre "Primary Action"
-    const primaryButton = page.getByRole('button', { name: 'Primary Action' });
     
-    // Hacer click en el botón
-    await primaryButton.click();
+    // TODO: Paso 2 - Localizar el botón "Primary Action"
+    // Usa page.getByRole() con el rol 'button' y el nombre 'Primary Action'
+    // Guarda la referencia en una variable llamada primaryButton
+    // Sintaxis: page.getByRole('rol', { name: 'nombre-del-elemento' })
     
-    // Verificar que el botón "Toggle Button" es visible después de la interacción
-    // toBeVisible() valida que el elemento está en el DOM y es visible al usuario
-    await expect(page.getByRole('button', { name: 'Toggle Button' })).toBeVisible();
+    
+    // TODO: Paso 3 - Hacer click en el botón
+    // Usa el método .click() en la variable primaryButton
+    // Ejemplo: await variable.click();
+    
+    
+    // TODO: Paso 4 - Verificar que el botón "Toggle Button" es visible
+    // Usa expect() con toBeVisible()
+    // Localiza el botón usando getByRole('button', { name: 'Toggle Button' })
+    // Sintaxis: await expect(locator).toBeVisible();
+    
   });
 
   /*
@@ -91,19 +99,26 @@ test.describe('getByRole Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('fill form elements using getByRole', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
     
-    // Localizar el campo de username usando rol 'textbox'
-    // La regex /username/i hace que la búsqueda sea case-insensitive
-    const usernameInput = page.getByRole('textbox', { name: /username/i });
     
-    // Llenar el campo con el valor 'TestUser'
-    // fill() primero limpia el campo y luego escribe el nuevo valor
-    await usernameInput.fill('TestUser');
+    // TODO: Paso 2 - Localizar el campo de username
+    // Usa page.getByRole() con rol 'textbox' y name usando regex: /username/i
+    // Guarda el locator en una variable llamada usernameInput
+    // Nota: La regex /username/i es case-insensitive (ignora mayúsculas/minúsculas)
+    // Sintaxis: page.getByRole('textbox', { name: /patron/i })
     
-    // Validar que el valor se ingresó correctamente
-    // toHaveValue() verifica el atributo 'value' del input
-    await expect(usernameInput).toHaveValue('TestUser');
+    
+    // TODO: Paso 3 - Llenar el campo con el valor 'TestUser'
+    // Usa el método .fill() en la variable usernameInput
+    // El método fill() limpia el campo primero y luego escribe el nuevo valor
+    // Ejemplo: await variable.fill('texto-aqui');
+    
+    
+    // TODO: Paso 4 - Validar que el valor se ingresó correctamente
+    // Usa expect() con toHaveValue() para verificar el valor del input
+    // Sintaxis: await expect(variable).toHaveValue('valor-esperado');
+    
   });
 });

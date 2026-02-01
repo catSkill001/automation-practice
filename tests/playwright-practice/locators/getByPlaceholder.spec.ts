@@ -54,19 +54,33 @@ test.describe('getByPlaceholder Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('fill input using placeholder', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
     
-    // Localizar el input de búsqueda por su placeholder
+    
+    
+    // TODO: Paso 2 - Localizar el input por su placeholder
+    // Usa page.getByPlaceholder('Search') para encontrar el input de búsqueda
     // getByPlaceholder busca elementos con placeholder="Search"
-    const searchInput = page.getByPlaceholder('Search');
+    // Guarda el locator en una variable llamada 'searchInput'
+    // Sintaxis: const elemento = page.getByPlaceholder('texto del placeholder')
     
-    // Llenar el campo de búsqueda con un término
+    
+    
+    // TODO: Paso 3 - Llenar el campo de búsqueda
+    // Usa el método .fill() del locator para ingresar el texto 'Playwright Testing'
     // fill() limpia el contenido anterior automáticamente
-    await searchInput.fill('Playwright Testing');
+    // Sintaxis: await locator.fill('texto a ingresar')
     
-    // Validar que el valor se ingresó correctamente
-    // toHaveValue verifica el atributo 'value' del input
-    await expect(searchInput).toHaveValue('Playwright Testing');
+    
+    
+    // TODO: Paso 4 - Validar que el texto se ingresó correctamente
+    // Usa expect().toHaveValue() para verificar el valor del input
+    // toHaveValue verifica el atributo 'value' del elemento
+    // Sintaxis: await expect(locator).toHaveValue('valor esperado')
+    
+    
+    
   });
 });

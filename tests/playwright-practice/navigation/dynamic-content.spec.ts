@@ -59,21 +59,28 @@ test.describe('Dynamic Content', () => {
   |--------------------------------------------------------------------------
   */
   test('handle dynamic button', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // Paso 1: Navegar a la página de práctica
+    // Sintaxis: await page.goto('URL');
     
-    // Localizar el botón "START"
-    // getByText busca elementos que contengan exactamente este texto
-    const startButton = page.getByText('START');
     
-    // Hacer click en el botón
-    // Esto dispara código JavaScript que modifica el DOM dinámicamente
-    await startButton.click();
+
+    // Paso 2: Localizar el botón con texto "START"
+    // Sintaxis: page.getByText('texto')
+    // Hint: getByText busca elementos por su texto visible
     
-    // Esperar 1 segundo (1000ms) para que el contenido dinámico cambie
-    // Nota: Este es un approach básico. En tests de producción,
-    // deberíamos esperar por un cambio específico en lugar de tiempo fijo
-    await page.waitForTimeout(1000);
+    
+
+    // Paso 3: Hacer click en el botón
+    // Sintaxis: await button.click();
+    
+    
+
+    // Paso 4: Esperar 1 segundo para que el contenido dinámico cambie
+    // Sintaxis: await page.waitForTimeout(milisegundos);
+    // Hint: 1000ms = 1 segundo
+    // Nota: En producción es mejor esperar por un cambio específico
+    
+    
     
     // Mejores prácticas para contenido dinámico:
     // 1. Esperar por texto específico usando expect con toHaveText

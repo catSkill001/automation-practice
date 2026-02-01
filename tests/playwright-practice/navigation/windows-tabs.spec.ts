@@ -58,30 +58,30 @@ test.describe('Windows & Tabs', () => {
   |--------------------------------------------------------------------------
   */
   test('handle new tab', async ({ page, context }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // Paso 1: Navegar a la página de práctica
+    // Sintaxis: await page.goto('URL');
     
-    // Preparar la captura de la nueva página
-    // Promise.all ejecuta ambas operaciones en paralelo:
-    // 1. Esperar a que se dispare el evento 'page' (nueva pestaña)
-    // 2. Hacer click en el botón que abre la pestaña
-    const [newPage] = await Promise.all([
-      // Esperar a que se abra una nueva página en este context
-      // Esto debe estar ANTES del click para no perder el evento
-      context.waitForEvent('page'),
-      
-      // Hacer click en el botón/link que abre la nueva pestaña
-      // Esto dispara window.open() o <a target="_blank">
-      page.getByText('New Tab').click()
-    ]);
     
-    // Esperar a que la nueva página termine de cargar
-    // Opciones: 'load', 'domcontentloaded', 'networkidle'
-    await newPage.waitForLoadState();
+
+    // Paso 2: Capturar la nueva página que se abre al hacer click
+    // Sintaxis: const [newPage] = await Promise.all([context.waitForEvent('page'), acción_que_abre_pestaña])
+    // Hint: Usa Promise.all para ejecutar el wait y el click simultáneamente
+    // TODO: Esperar evento 'page' del context y hacer click en el texto 'New Tab'
     
-    // Verificar que la nueva página fue creada correctamente
-    // newPage es una instancia de Page, igual que page
-    expect(newPage).toBeTruthy();
+    
+    
+    
+    
+
+    // Paso 3: Esperar a que la nueva página cargue completamente
+    // Sintaxis: await newPage.waitForLoadState();
+    
+    
+
+    // Paso 4: Verificar que la nueva página existe
+    // Sintaxis: expect(newPage).toBeTruthy();
+    
+    
     
     /*
      * Interacciones útiles con la nueva página:
@@ -106,9 +106,11 @@ test.describe('Windows & Tabs', () => {
      * console.log(`Total pages: ${allPages.length}`);
      */
     
-    // Cerrar la nueva pestaña cuando terminemos de usarla
-    // Esto libera recursos y mantiene limpio el context
-    await newPage.close();
+    // Paso 5: Cerrar la nueva pestaña
+    // Sintaxis: await newPage.close();
+    // Hint: Esto libera recursos del navegador
+    
+    
     
     /*
      * Nota: El context se cierra automáticamente al final del test,

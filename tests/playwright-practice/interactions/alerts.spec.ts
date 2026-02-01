@@ -56,36 +56,49 @@ test.describe('Alerts & Popups', () => {
   |--------------------------------------------------------------------------
   */
   test('handle simple alert', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
-    
-    // Configurar listener para interceptar el alert
-    // IMPORTANTE: Esto debe estar ANTES de la acción que dispara el alert
-    page.on('dialog', async dialog => {
-      // Verificar que el tipo de diálogo es 'alert'
-      // Esto valida que JavaScript ejecutó window.alert()
-      expect(dialog.type()).toBe('alert');
-      
-      // Aceptar el alert (equivale a hacer click en OK)
-      // Si no aceptamos, el test se bloqueará
-      await dialog.accept();
-      
-      /*
-       * Otras acciones útiles con dialog:
-       * 
-       * // Leer el mensaje del alert:
-       * console.log('Alert message:', dialog.message());
-       * 
-       * // Obtener el valor por defecto (solo para prompts):
-       * console.log('Default value:', dialog.defaultValue());
-       */
-    });
-    
-    // Hacer click en el botón que dispara el alert
-    // Esto ejecuta: window.alert('mensaje')
-    await page.getByText('Simple Alert').click();
-    
-    // El test continúa solo si el alert fue manejado correctamente
+    // Paso 1: Navegar a la página de práctica
+    // TODO: Usa page.goto() para navegar a '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
+
+
+
+    // Paso 2: Configurar listener para interceptar el alert
+    // TODO: Usa page.on('dialog', callback) ANTES del click que dispara el alert
+    // Sintaxis: page.on('dialog', async dialog => { ... })
+    // Hint: IMPORTANTE - El listener debe configurarse ANTES de la acción
+
+
+
+    // Paso 2a: Dentro del callback, verificar el tipo de diálogo
+    // TODO: Usa expect(dialog.type()).toBe('alert')
+    // Sintaxis: expect(dialog.type()).toBe('alert')
+    // Hint: Esto valida que JavaScript ejecutó window.alert()
+
+
+
+    // Paso 2b: Aceptar el alert
+    // TODO: Usa await dialog.accept() para cerrar el diálogo
+    // Sintaxis: await dialog.accept()
+    // Hint: Si no aceptamos, el test se bloqueará
+
+
+
+    // Paso 3: Hacer click en el botón que dispara el alert
+    // TODO: Usa page.getByText('Simple Alert').click()
+    // Sintaxis: await page.getByText(texto).click()
+    // Hint: Esto ejecuta window.alert('mensaje')
+
+
+
+    /*
+     * Otras acciones útiles con dialog:
+     * 
+     * // Leer el mensaje del alert:
+     * console.log('Alert message:', dialog.message());
+     * 
+     * // Obtener el valor por defecto (solo para prompts):
+     * console.log('Default value:', dialog.defaultValue());
+     */
   });
 
   /*
@@ -119,29 +132,45 @@ test.describe('Alerts & Popups', () => {
   |--------------------------------------------------------------------------
   */
   test('handle confirmation alert', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
-    
-    // Configurar listener para el confirm
-    page.on('dialog', async dialog => {
-      // Verificar que el tipo es 'confirm'
-      // confirm() muestra OK y Cancel buttons
-      expect(dialog.type()).toBe('confirm');
-      
-      // Aceptar el confirm (click en OK)
-      // Esto hace que confirm() retorne true en JavaScript
-      await dialog.accept();
-      
-      /*
-       * Para rechazar (click en Cancel):
-       * await dialog.dismiss();
-       * 
-       * Esto haría que confirm() retorne false
-       */
-    });
-    
-    // Hacer click en el botón que dispara confirm()
-    await page.getByText('Confirmation Alert').click();
+    // Paso 1: Navegar a la página de práctica
+    // TODO: Usa page.goto() para navegar a '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
+
+
+
+    // Paso 2: Configurar listener para el confirm
+    // TODO: Usa page.on('dialog', callback) para interceptar el confirm
+    // Sintaxis: page.on('dialog', async dialog => { ... })
+
+
+
+    // Paso 2a: Verificar que el tipo es 'confirm'
+    // TODO: Usa expect(dialog.type()).toBe('confirm')
+    // Sintaxis: expect(dialog.type()).toBe('confirm')
+    // Hint: confirm() muestra botones OK y Cancel
+
+
+
+    // Paso 2b: Aceptar el confirm (equivale a click en OK)
+    // TODO: Usa await dialog.accept() para aceptar el confirm
+    // Sintaxis: await dialog.accept()
+    // Hint: Esto hace que confirm() retorne true en JavaScript
+    // Alternativa: dialog.dismiss() para cancelar (retorna false)
+
+
+
+    // Paso 3: Hacer click en el botón que dispara confirm()
+    // TODO: Usa page.getByText('Confirmation Alert').click()
+    // Sintaxis: await page.getByText(texto).click()
+
+
+
+    /*
+     * Para rechazar (click en Cancel):
+     * await dialog.dismiss();
+     * 
+     * Esto haría que confirm() retorne false
+     */
   });
 
   /*
@@ -175,34 +204,50 @@ test.describe('Alerts & Popups', () => {
   |--------------------------------------------------------------------------
   */
   test('handle prompt alert', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
-    
-    // Configurar listener para el prompt
-    page.on('dialog', async dialog => {
-      // Verificar que el tipo es 'prompt'
-      // prompt() muestra un input field al usuario
-      expect(dialog.type()).toBe('prompt');
-      
-      // Aceptar el prompt y enviar el texto "Test Input"
-      // Esto hace que prompt() retorne "Test Input" en JavaScript
-      await dialog.accept('Test Input');
-      
-      /*
-       * Otras opciones:
-       * 
-       * // Aceptar sin texto (envía string vacío):
-       * await dialog.accept();
-       * 
-       * // Cancelar el prompt (retorna null):
-       * await dialog.dismiss();
-       * 
-       * // Leer el valor por defecto del prompt:
-       * console.log('Default:', dialog.defaultValue());
-       */
-    });
-    
-    // Hacer click en el botón que dispara prompt()
-    await page.getByText('Prompt Alert').click();
+    // Paso 1: Navegar a la página de práctica
+    // TODO: Usa page.goto() para navegar a '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
+
+
+
+    // Paso 2: Configurar listener para el prompt
+    // TODO: Usa page.on('dialog', callback) para interceptar el prompt
+    // Sintaxis: page.on('dialog', async dialog => { ... })
+
+
+
+    // Paso 2a: Verificar que el tipo es 'prompt'
+    // TODO: Usa expect(dialog.type()).toBe('prompt')
+    // Sintaxis: expect(dialog.type()).toBe('prompt')
+    // Hint: prompt() muestra un input field al usuario
+
+
+
+    // Paso 2b: Aceptar el prompt con texto "Test Input"
+    // TODO: Usa await dialog.accept('Test Input') para enviar el texto
+    // Sintaxis: await dialog.accept(textoAEnviar)
+    // Hint: Esto hace que prompt() retorne "Test Input" en JavaScript
+    // Alternativas: accept() sin parámetro envía string vacío, dismiss() retorna null
+
+
+
+    // Paso 3: Hacer click en el botón que dispara prompt()
+    // TODO: Usa page.getByText('Prompt Alert').click()
+    // Sintaxis: await page.getByText(texto).click()
+
+
+
+    /*
+     * Otras opciones:
+     * 
+     * // Aceptar sin texto (envía string vacío):
+     * await dialog.accept();
+     * 
+     * // Cancelar el prompt (retorna null):
+     * await dialog.dismiss();
+     * 
+     * // Leer el valor por defecto del prompt:
+     * console.log('Default:', dialog.defaultValue());
+     */
   });
 });
