@@ -221,16 +221,14 @@ npx playwright show-report
 
 ### Archivos de configuración
 
-- `playwright.config.ts`: Configuración de Playwright con soporte para entornos
-- `.env.example`: Plantilla para variables de entorno
+- `playwright.config.ts`: Configuración de Playwright
 - `.github/workflows/`: CI/CD con GitHub Actions
 
 ## Configuración
 
-- **Base URL**: <https://testautomationpractice.blogspot.com>
+- **Base URL**: <https://testautomationpractice.blogspot.com> (hardcodeada para práctica)
 - **Headless**: false (para práctica visual), true en CI
 - **Workers**: 1 (para estabilidad en práctica)
-- **Entornos**: Soporte para dev, qa, stage, prod (configurable en `.env`)
 - **Timeout**: 30 segundos por defecto
 
 ## CI/CD
