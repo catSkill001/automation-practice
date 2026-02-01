@@ -2,13 +2,14 @@
 
 Proyecto de práctica para automatización de pruebas web usando Playwright.
 
-## 🎯 ¡Estás en la rama de práctica!
+## 🎯 Estás en la rama de práctica
 
 Esta es la rama **`template`** con tests incompletos. Sigue estos pasos:
 
 ### 📋 Instrucciones
 
 1. **Crea tu rama de práctica:**
+
    ```bash
    git checkout -b practice/tu-nombre
    ```
@@ -16,11 +17,13 @@ Esta es la rama **`template`** con tests incompletos. Sigue estos pasos:
 2. **Completa los tests** en la carpeta `tests/`. Busca los comentarios `TODO` que te guiarán.
 
 3. **Valida localmente:**
+
    ```bash
    npx playwright test
    ```
 
 4. **Push para obtener feedback del CI:**
+
    ```bash
    git add .
    git commit -m "Complete ejercicio X"
@@ -32,18 +35,22 @@ Esta es la rama **`template`** con tests incompletos. Sigue estos pasos:
 6. **¿Necesitas ayuda?** Consulta la rama `main` para ver las soluciones completas.
 
 ## Descripción
+
 Colección de tests automatizados para practicar diferentes funcionalidades de Playwright, enfocados en interacciones comunes de páginas web.
 
 ## Prerrequisitos
+
 - Node.js (versión LTS recomendada)
 - npm
 
 ## Instalación
+
 ```bash
 npm install
 ```
 
 ## Ejecutar tests
+
 ```bash
 # Todos los tests
 npx playwright test
@@ -59,6 +66,7 @@ npx playwright show-report
 ```
 
 ## Estructura del proyecto
+
 - `tests/`: Archivos de pruebas
   - `smoke.spec.ts`: Test básico de carga de página
   - `alerts.spec.ts`: Manejo de alerts, confirms y prompts
@@ -69,9 +77,12 @@ npx playwright show-report
 - `.github/workflows/`: CI/CD con GitHub Actions
 
 ## Configuración
-- Base URL: https://testautomationpractice.blogspot.com
+
+- Base URL: <https://testautomationpractice.blogspot.com>
 - Headless: false (para práctica visual)
 - Workers: 1 (para estabilidad en práctica)
 
 ## CI/CD
+
 Incluye workflow de GitHub Actions que ejecuta tests automáticamente en push/PR.
+Los tests corren headless en CI para compatibilidad con Ubuntu.
