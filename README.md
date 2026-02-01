@@ -89,8 +89,9 @@ npx playwright show-report
   - **Avanzados:**
     - `frames.spec.ts`: Trabajo con iframes (3 tests)
     - `windows.spec.ts`: Múltiples ventanas y tabs (3 tests)
+    - `shadow-dom.spec.ts`: Trabajo con Shadow DOM (5 tests)
 
-**Total: 15 archivos de test con cobertura completa de la página**
+**Total: 16 archivos de test con cobertura completa de la página**
 
 ## Lista completa de casos de prueba
 
@@ -156,7 +157,7 @@ npx playwright show-report
   - • resize element by dragging
   - • resize element with constraints
 
-### 🚀 Avanzados (6 tests)
+### 🚀 Avanzados (11 tests)
 - `frames.spec.ts`
   - • interact with iframe content
   - • work with multiple iframes
@@ -167,7 +168,14 @@ npx playwright show-report
   - • handle multiple windows
   - • close opened window
 
-**Total: 37 casos de prueba organizados en 15 archivos**
+- `shadow-dom.spec.ts`
+  - • access element inside shadow dom
+  - • click button inside shadow dom
+  - • access nested shadow dom
+  - • query multiple elements in shadow dom
+  - • work with shadow dom slots
+
+**Total: 42 casos de prueba organizados en 16 archivos**
 
 ### Archivos de configuración
 
