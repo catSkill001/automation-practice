@@ -198,34 +198,38 @@ npx playwright show-report
 
 #### Nivel 2: Features Avanzadas
 
-7. **API Tests** (5 tests - TC-024 a TC-028)
-   - GET requests básicos
-   - POST requests con data
-   - Validación de arrays
-   - Headers personalizados
-   - Manejo de errores 404
+1. **API Tests** (5 tests - TC-024 a TC-028)
 
-8. **Visual Regression** (5 tests - TC-029 a TC-033)
-   - Screenshots de página completa
-   - Screenshots de elementos específicos
-   - Máscaras para contenido dinámico
-   - Thresholds personalizados
-   - Estados específicos de UI
+- GET requests básicos
+- POST requests con data
+- Validación de arrays
+- Headers personalizados
+- Manejo de errores 404
 
-9. **Accessibility** (6 tests - TC-034 a TC-039)
-   - Scan completo con axe-core
-   - Validación WCAG Level A/AA
-   - Accesibilidad de formularios
-   - Exclusión de elementos third-party
-   - Validación de contraste de colores
-   - Reportes detallados
+1. **Visual Regression** (5 tests - TC-029 a TC-033)
 
-10. **Page Object Model** (6 tests - TC-040 a TC-045)
-    - Implementar base.page.ts
-    - Implementar practice.page.ts con locators
-    - Tests usando POM
-    - Comparación con/sin POM
-    - Fluent API patterns
+- Screenshots de página completa
+- Screenshots de elementos específicos
+- Máscaras para contenido dinámico
+- Thresholds personalizados
+- Estados específicos de UI
+
+1. **Accessibility** (6 tests - TC-034 a TC-039)
+
+- Scan completo con axe-core
+- Validación WCAG Level A/AA
+- Accesibilidad de formularios
+- Exclusión de elementos third-party
+- Validación de contraste de colores
+- Reportes detallados
+
+1. **Page Object Model** (6 tests - TC-040 a TC-045)
+
+- Implementar base.page.ts
+- Implementar practice.page.ts con locators
+- Tests usando POM
+- Comparación con/sin POM
+- Fluent API patterns
 
 ### Tips para aprender
 
@@ -469,6 +473,7 @@ Una vez que completes los tests básicos (TC-001 a TC-023), puedes continuar con
 ### API Testing (TC-024 a TC-028)
 
 **Qué aprenderás:**
+
 - Testing de APIs REST sin abrir browser
 - Validación de responses JSON
 - Manejo de headers personalizados
@@ -480,6 +485,7 @@ No requiere instalación adicional, usa el fixture `request` incluido en Playwri
 **Ubicación:** `tests/playwright-practice/api/api-tests.spec.ts`
 
 **Ejercicios:**
+
 - TC-024: GET request básico con validación
 - TC-025: POST request creando recursos
 - TC-026: Validar y filtrar arrays
@@ -489,17 +495,20 @@ No requiere instalación adicional, usa el fixture `request` incluido en Playwri
 ### Visual Regression Testing (TC-029 a TC-033)
 
 **Qué aprenderás:**
+
 - Capturar y comparar screenshots
 - Detectar cambios visuales inesperados
 - Usar máscaras para contenido dinámico
 - Configurar thresholds de tolerancia
 
 **Primera ejecución:**
+
 ```bash
 npx playwright test visual --update-snapshots
 ```
 
 **Validación posterior:**
+
 ```bash
 npx playwright test visual
 ```
@@ -507,6 +516,7 @@ npx playwright test visual
 **Ubicación:** `tests/playwright-practice/visual/visual-regression.spec.ts`
 
 **Ejercicios:**
+
 - TC-029: Screenshot de página completa
 - TC-030: Screenshot de elemento específico
 - TC-031: Máscaras para elementos dinámicos
@@ -516,12 +526,14 @@ npx playwright test visual
 ### Accessibility Testing (TC-034 a TC-039)
 
 **Qué aprenderás:**
+
 - Validar cumplimiento WCAG
 - Detectar problemas de accesibilidad
 - Validar contraste de colores
 - Generar reportes detallados
 
 **Instalación:**
+
 ```bash
 npm install --save-dev @axe-core/playwright
 ```
@@ -529,6 +541,7 @@ npm install --save-dev @axe-core/playwright
 **Ubicación:** `tests/playwright-practice/accessibility/accessibility.spec.ts`
 
 **Ejercicios:**
+
 - TC-034: Scan completo de página
 - TC-035: Validación WCAG Level A/AA
 - TC-036: Accesibilidad de formularios
@@ -537,6 +550,7 @@ npm install --save-dev @axe-core/playwright
 - TC-039: Reporte detallado con todos los datos
 
 **Niveles WCAG:**
+
 - Level A: Requisitos básicos mínimos
 - Level AA: Estándar recomendado (incluye contraste 4.5:1)
 - Level AAA: Nivel más alto (contraste 7:1)
@@ -544,17 +558,20 @@ npm install --save-dev @axe-core/playwright
 ### Page Object Model (TC-040 a TC-045)
 
 **Qué aprenderás:**
+
 - Implementar el patrón POM
 - Centralizar locators en clases
 - Crear métodos reutilizables
 - Mejorar mantenibilidad de tests
 
 **Archivos a implementar:**
+
 1. `pages/base.page.ts` - Clase base con funcionalidad común
 2. `pages/practice.page.ts` - Page object con locators de la página
 3. `tests/playwright-practice/pom/pom-examples.spec.ts` - Tests usando POM
 
 **Ejercicios:**
+
 - TC-040: Interacción básica con botones
 - TC-041: Llenar formulario con método de alto nivel
 - TC-042: Seleccionar opciones (radio/checkboxes)
@@ -563,6 +580,7 @@ npm install --save-dev @axe-core/playwright
 - TC-045: Workflow completo usando POM
 
 **Ventajas del POM:**
+
 - Centralización: Locators en un solo lugar
 - Reutilización: Métodos compartidos entre tests
 - Mantenibilidad: Cambios en UI solo actualizan el page object
