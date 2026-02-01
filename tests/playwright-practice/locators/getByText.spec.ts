@@ -55,20 +55,26 @@ test.describe('getByText Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('locate elements by text content', async ({ page }) => {
-    // Navegar a la página de práctica de Playwright
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
     
-    // Buscar un párrafo que contiene texto específico
-    // getByText() busca elementos cuyo texto visible coincida
-    const paragraph = page.getByText('This paragraph contains some important text');
     
-    // Verificar que el párrafo está visible en la página
-    // Esto valida que el contenido se renderizó correctamente
-    await expect(paragraph).toBeVisible();
+    // TODO: Paso 2 - Buscar un párrafo por su texto
+    // Usa page.getByText() con el texto exacto: 'This paragraph contains some important text'
+    // Guarda el locator en una variable llamada paragraph
+    // Sintaxis: page.getByText('texto-exacto-aqui')
     
-    // Buscar y hacer click en el botón "Submit Form" por su texto
-    // getByText() es útil cuando no hay un role o test-id disponible
-    await page.getByText('Submit Form').click();
+    
+    // TODO: Paso 3 - Verificar que el párrafo es visible
+    // Usa expect() con toBeVisible() para validar que el párrafo se renderizó
+    // Sintaxis: await expect(variable).toBeVisible();
+    
+    
+    // TODO: Paso 4 - Hacer click en el botón "Submit Form"
+    // Usa page.getByText() para localizar el botón por su texto
+    // Encadena el método .click() directamente
+    // Ejemplo: await page.getByText('texto-boton').click();
+    
   });
 
   /*
@@ -98,18 +104,21 @@ test.describe('getByText Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('interact with list items by text', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
     
-    // Verificar que el primer item de la lista es visible
-    // getByText busca el texto exacto en cualquier elemento
-    await expect(page.getByText('List item 1')).toBeVisible();
     
-    // Verificar el segundo item que contiene un link
-    await expect(page.getByText('List item 2 with link')).toBeVisible();
+    // TODO: Paso 2 - Verificar que "List item 1" es visible
+    // Usa expect() con page.getByText() y toBeVisible()
+    // Sintaxis: await expect(page.getByText('texto')).toBeVisible();
     
-    // Verificar el tercer item con texto único/especial
-    // Útil para demostrar que podemos buscar texto con caracteres especiales
-    await expect(page.getByText('Special: Unique text identifier')).toBeVisible();
+    
+    // TODO: Paso 3 - Verificar que "List item 2 with link" es visible
+    // Usa la misma estructura que el paso anterior
+    
+    
+    // TODO: Paso 4 - Verificar que "Special: Unique text identifier" es visible
+    // Nota: getByText() puede buscar texto con caracteres especiales como ':'
+    
   });
 });

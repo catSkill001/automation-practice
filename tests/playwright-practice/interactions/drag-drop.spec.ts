@@ -58,29 +58,41 @@ test.describe('Drag and Drop', () => {
   |--------------------------------------------------------------------------
   */
   test('perform drag and drop operation', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
-    
-    // Localizar el elemento que será arrastrado
-    // Este elemento debe tener draggable="true" en HTML
-    const draggable = page.locator('#draggable');
-    
-    // Localizar la zona donde se soltará el elemento
-    // Esta zona debe manejar los eventos drop
-    const droppable = page.locator('#droppable');
-    
-    // Realizar la operación de drag and drop
-    // dragTo() maneja automáticamente:
-    // 1. Hacer click y mantener en el elemento draggable
-    // 2. Mover el mouse hasta el elemento droppable
-    // 3. Soltar el click
-    // 4. Disparar todos los eventos necesarios
-    await draggable.dragTo(droppable);
-    
-    // Validar que el drop fue exitoso
-    // La zona droppable debe cambiar su contenido a "Dropped!"
-    await expect(droppable).toContainText('Dropped!');
-    
+    // Paso 1: Navegar a la página de práctica
+    // TODO: Usa page.goto() para navegar a '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
+
+
+
+    // Paso 2: Localizar el elemento que será arrastrado
+    // TODO: Crea una constante 'draggable' usando page.locator('#draggable')
+    // Sintaxis: const draggable = page.locator(selector)
+    // Hint: Este elemento debe tener draggable="true" en HTML
+
+
+
+    // Paso 3: Localizar la zona donde se soltará el elemento
+    // TODO: Crea una constante 'droppable' usando page.locator('#droppable')
+    // Sintaxis: const droppable = page.locator(selector)
+    // Hint: Esta zona debe manejar los eventos drop
+
+
+
+    // Paso 4: Realizar la operación de drag and drop
+    // TODO: Usa draggable.dragTo(droppable) para arrastrar y soltar
+    // Sintaxis: await elemento.dragTo(destino)
+    // Hint: dragTo() hace click, mantiene, mueve y suelta automáticamente
+    // API: Dispara todos los eventos necesarios (dragstart, drag, drop, dragend)
+
+
+
+    // Paso 5: Validar que el drop fue exitoso
+    // TODO: Usa expect(droppable).toContainText('Dropped!') para verificar
+    // Sintaxis: await expect(elemento).toContainText(texto)
+    // Hint: La zona droppable debe cambiar su contenido a "Dropped!"
+
+
+
     /*
      * Otras formas de hacer drag and drop:
      * 

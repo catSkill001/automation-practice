@@ -1,11 +1,22 @@
-# Playwright Practice Suite
+# Playwright Practice Suite - Template Branch
 
-Proyecto completo de práctica de automatización con Playwright, organizado modularmente por categorías de funcionalidad.
+## ⚠️ RAMA TEMPLATE - Para Práctica
+
+Esta es la **rama template** del proyecto. Los tests están en formato TODO para que practiques escribiendo el código desde cero.
+
+**¿Buscas las respuestas?** → Revisa la rama `main`
 
 ## Descripción
 
-Suite de tests end-to-end que cubre desde localizadores básicos hasta conceptos avanzados del DOM. Incluye 31 tests organizados en 6 categorías:
+Suite de tests end-to-end con 31 casos de prueba organizados en 6 categorías. Cada test incluye:
 
+- Documentación JSDoc completa con objetivo y conceptos clave
+- TODOs numerados paso a paso (Paso 1, Paso 2, etc.)
+- Instrucciones claras de qué hacer en cada paso
+- Ejemplos de sintaxis y hints de APIs de Playwright
+- Espacios para escribir tu código
+
+**Categorías:**
 - **Locators**: 7 estrategias diferentes de localización (getByRole, getByText, getByLabel, etc.)
 - **Tables**: Interacción con tablas estáticas y con paginación
 - **Interactions**: Alertas, mouse actions, drag & drop, sliders
@@ -24,17 +35,66 @@ Suite de tests end-to-end que cubre desde localizadores básicos hasta conceptos
 npm install
 ```
 
-## Ejecutar tests
+## Cómo usar esta rama
+
+### 1. Instalación
 
 ```bash
-# Todos los tests (31 tests)
-npx playwright test
+npm install
+npx playwright install
+```
 
-# Por categoría
-npx playwright test locators
-npx playwright test tables
-npx playwright test interactions
-npx playwright test files
+### 2. Empezar a practicar
+
+Abre cualquier archivo `.spec.ts` en la carpeta `tests/playwright-practice/` y sigue los TODOs:
+
+```typescript
+test('example test', async ({ page }) => {
+  // TODO: Paso 1 - Navegar a la página
+  // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+  
+  // 👈 Escribe tu código aquí
+  
+  // TODO: Paso 2 - Localizar el elemento
+  // Usa page.getByRole() apropiado
+  
+  // 👈 Escribe tu código aquí
+});
+```
+
+### 3. Ejecutar tus tests
+
+```bash
+# Un archivo específico
+npx playwright test locators/getByRole.spec.ts
+
+# Con browser visible (recomendado para práctica)
+npx playwright test locators/getByRole.spec.ts --headed
+
+# Modo debug para explorar
+npx playwright test locators/getByRole.spec.ts --debug
+```
+
+### 4. Validar tus respuestas
+
+Compara tu código con la rama `main`:
+
+```bash
+# Ver las diferencias
+git diff main tests/playwright-practice/locators/getByRole.spec.ts
+
+# O cambia a main para ver la solución
+git checkout main
+```
+
+## Comandos útiles para practicar
+
+```bash
+# Ejecutar por categoría
+npx playwright test locators --headed
+npx playwright test tables --headed
+npx playwright test interactions --headed
+npx playwright test files --headed
 npx playwright test navigation
 npx playwright test advanced-dom
 
@@ -53,6 +113,37 @@ npx playwright test --debug
 npx playwright show-report
 ```
 
+## Recomendaciones para practicar
+
+### Orden sugerido (de fácil a difícil)
+
+1. **Locators** (10 tests) - Empieza aquí
+   - getByRole → getByText → getByLabel → getByPlaceholder
+   - getByAltText → getByTitle → getByTestId
+
+2. **Interactions** (7 tests) - Acciones básicas
+   - alerts → mouse-actions → drag-drop → slider
+
+3. **Tables** (2 tests) - Datos tabulares
+   - Tabla estática → Tabla con paginación
+
+4. **Files** (2 tests) - Upload de archivos
+   - Single file → Multiple files
+
+5. **Navigation** (2 tests) - Navegación avanzada
+   - windows-tabs → dynamic-content
+
+6. **Advanced DOM** (8 tests) - Conceptos para entrevistas
+   - frames (3 tests) → shadow-dom (5 tests)
+
+### Tips para aprender
+
+- **Usa `--headed`**: Ver el browser te ayuda a entender qué está pasando
+- **Usa `--debug`**: El Playwright Inspector te permite explorar selectores
+- **Lee la documentación JSDoc**: Cada test explica los conceptos clave
+- **Compara con main**: Si te atoras, revisa la solución en la rama main
+- **Practica sin copiar**: Intenta escribir el código de memoria primero
+
 ## Configuración
 
 - **Base URL**: <https://testautomationpractice.blogspot.com>
@@ -60,16 +151,43 @@ npx playwright show-report
 - **Workers**: 1
 - **Timeout**: 30 segundos
 
-## Características del código
+## Formato de los tests
 
-Cada test incluye:
+Cada test en esta rama template sigue este formato:
 
-- **ID de caso de prueba** (TC-001, TC-002, etc.)
-- **Documentación JSDoc detallada** con descripción, objetivo y conceptos clave
-- **Comentarios inline** explicando cada paso
-- **Ejemplos de uso** de las APIs de Playwright
-- **Mejores prácticas** y alternativas de implementación
-- **Conceptos clave** explicados en español
+```typescript
+/*
+|--------------------------------------------------------------------------
+| TC-XXX: Título del test
+|--------------------------------------------------------------------------
+| Objetivo:
+|   Descripción clara de qué aprenderás
+| 
+| Precondiciones:
+|   Qué debe existir en la página
+| 
+| Pasos:
+|   1. Paso a paso detallado
+|   2. Qué hacer en cada momento
+| 
+| Resultado esperado:
+|   Qué debe pasar al final
+| 
+| Conceptos clave:
+|   APIs y conceptos importantes explicados
+|--------------------------------------------------------------------------
+*/
+test('nombre del test', async ({ page }) => {
+  // TODO: Paso 1 - Descripción clara
+  // Instrucciones de qué API usar
+  // Ejemplo de sintaxis
+  
+  // 👈 Escribe tu código aquí
+  
+  // TODO: Paso 2 - Siguiente acción
+  // ...
+});
+```
 
 ## Conceptos clave cubiertos
 
@@ -82,6 +200,7 @@ Interacción con contenido dentro de iframes:
 - Los tests crean iframes dinámicamente con `srcdoc` para mayor control
 
 **Ejemplo:**
+
 ```typescript
 const frame = page.frameLocator('#my-iframe');
 await frame.locator('input').fill('test');
@@ -98,6 +217,7 @@ Playwright ofrece múltiples estrategias de localización semánticas que priori
 - `getByTestId()`: Atributo data-testid para testing
 
 **Ejemplo:**
+
 ```typescript
 await page.getByRole('button', { name: 'Submit' }).click();
 await page.getByLabel('Email').fill('test@test.com');
@@ -109,6 +229,7 @@ await page.getByPlaceholder('Search...').fill('Playwright');
 Navegación y extracción de datos desde tablas HTML con paginación.
 
 **Ejemplo:**
+
 ```typescript
 const table = page.locator('#productTable tbody tr');
 const rows = await table.count();
@@ -128,6 +249,7 @@ Simulación de acciones complejas:
 - **Drag & Drop**: `locator.dragTo(target)`
 
 **Ejemplo:**
+
 ```typescript
 page.on('dialog', async dialog => {
   console.log(dialog.message());
@@ -141,6 +263,7 @@ await page.getByRole('button', { name: 'Alert' }).click();
 Upload de archivos usando `setInputFiles()`:
 
 **Ejemplo:**
+
 ```typescript
 await page.locator('#fileInput').setInputFiles('path/to/file.pdf');
 await page.locator('#multipleFiles').setInputFiles(['file1.jpg', 'file2.png']);
@@ -151,6 +274,7 @@ await page.locator('#multipleFiles').setInputFiles(['file1.jpg', 'file2.png']);
 Manejo de múltiples tabs/ventanas y contenido dinámico:
 
 **Ejemplo:**
+
 ```typescript
 const [newPage] = await Promise.all([
 ### Shadow DOM
@@ -179,6 +303,7 @@ const shadowContent = await page.evaluate(() => {
 ```
 
 ## Tips para live coding
+
 y mejores prácticas
 
 ### Para desarrollo y debugging

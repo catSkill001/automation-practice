@@ -53,22 +53,32 @@ test.describe('Mouse Actions', () => {
   |--------------------------------------------------------------------------
   */
   test('handle mouse hover', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
-    
-    // Localizar el botón sobre el cual haremos hover
-    const pointMeButton = page.getByText('Point Me');
-    
-    // Hacer hover sobre el botón
-    // Esto simula mover el mouse sobre el elemento
-    // Dispara eventos: mouseenter, mouseover, mousemove
-    await pointMeButton.hover();
-    
-    // Esperar 500ms para que la animación del dropdown complete
-    // En un test de producción, es mejor esperar por el dropdown:
-    // await expect(page.locator('.dropdown-menu')).toBeVisible();
-    await page.waitForTimeout(500);
-    
+    // Paso 1: Navegar a la página de práctica
+    // TODO: Usa page.goto() para navegar a '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
+
+
+
+    // Paso 2: Localizar el botón sobre el cual haremos hover
+    // TODO: Crea una constante 'pointMeButton' usando page.getByText('Point Me')
+    // Sintaxis: const pointMeButton = page.getByText(texto)
+
+
+
+    // Paso 3: Hacer hover sobre el botón
+    // TODO: Usa pointMeButton.hover() para simular mover el mouse sobre el elemento
+    // Sintaxis: await elemento.hover()
+    // Hint: Esto dispara eventos mouseenter, mouseover, mousemove
+
+
+
+    // Paso 4: Esperar a que la animación del dropdown complete
+    // TODO: Usa page.waitForTimeout(500) para esperar 500ms
+    // Sintaxis: await page.waitForTimeout(milisegundos)
+    // Hint: En producción es mejor usar await expect(page.locator('.dropdown-menu')).toBeVisible()
+
+
+
     /*
      * Otras acciones útiles después del hover:
      * 
@@ -115,31 +125,52 @@ test.describe('Mouse Actions', () => {
   |--------------------------------------------------------------------------
   */
   test('handle double click', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
-    
-    // Localizar Field1 y verificar su valor inicial
-    const field1 = page.locator('#field1');
-    
-    // Validar que Field1 tiene el valor esperado
-    // Esto es importante para confirmar el estado inicial
-    await expect(field1).toHaveValue('Hello World!');
-    
-    // Localizar el botón "Copy Text"
-    // Usamos :has-text() para buscar botones que contengan ese texto
-    const copyButton = page.locator('button:has-text("Copy Text")');
-    
-    // Hacer doble click en el botón
-    // Esto ejecuta la lógica de copiar texto del Field1 al Field2
-    await copyButton.dblclick();
-    
-    // Localizar Field2 y verificar que recibió el texto copiado
-    const field2 = page.locator('#field2');
-    
-    // Validar que Field2 ahora tiene el mismo valor que Field1
-    // Esto confirma que el doble click funcionó correctamente
-    await expect(field2).toHaveValue('Hello World!');
-    
+    // Paso 1: Navegar a la página de práctica
+    // TODO: Usa page.goto() para navegar a '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
+
+
+
+    // Paso 2: Localizar Field1 y verificar su valor inicial
+    // TODO: Crea una constante 'field1' usando page.locator('#field1')
+    // Sintaxis: const field1 = page.locator(selector)
+
+
+
+    // Paso 3: Validar que Field1 tiene el valor "Hello World!"
+    // TODO: Usa expect(field1).toHaveValue('Hello World!')
+    // Sintaxis: await expect(elemento).toHaveValue(valorEsperado)
+    // Hint: Esto confirma el estado inicial antes del doble click
+
+
+
+    // Paso 4: Localizar el botón "Copy Text"
+    // TODO: Crea una constante 'copyButton' con page.locator('button:has-text("Copy Text")')
+    // Sintaxis: const copyButton = page.locator(selector)
+    // Hint: :has-text() busca botones que contengan ese texto
+
+
+
+    // Paso 5: Hacer doble click en el botón
+    // TODO: Usa copyButton.dblclick() para ejecutar la lógica de copiar
+    // Sintaxis: await elemento.dblclick()
+    // Hint: Esto copia el texto del Field1 al Field2
+
+
+
+    // Paso 6: Localizar Field2
+    // TODO: Crea una constante 'field2' usando page.locator('#field2')
+    // Sintaxis: const field2 = page.locator(selector)
+
+
+
+    // Paso 7: Validar que Field2 tiene el valor copiado
+    // TODO: Usa expect(field2).toHaveValue('Hello World!')
+    // Sintaxis: await expect(elemento).toHaveValue(valorEsperado)
+    // Hint: Esto confirma que el doble click funcionó correctamente
+
+
+
     /*
      * Nota sobre doble click:
      * 

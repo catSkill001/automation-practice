@@ -52,27 +52,26 @@ test.describe('File Upload', () => {
   |--------------------------------------------------------------------------
   */
   test('upload single file', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // Paso 1: Navegar a la página de práctica
+    // Sintaxis: await page.goto('URL');
     
-    // Localizar el primer input de tipo file en la página
-    // .first() asegura que tomamos el input para archivo único
-    const fileInput = page.locator('input[type="file"]').first();
     
-    // Subir un archivo creado dinámicamente
-    // No necesitamos tener el archivo físicamente en disco
-    await fileInput.setInputFiles({
-      // Nombre del archivo (con extensión)
-      name: 'test.txt',
-      
-      // Tipo MIME que identifica el tipo de archivo
-      // text/plain = archivo de texto plano
-      mimeType: 'text/plain',
-      
-      // Contenido del archivo como Buffer
-      // Buffer.from() convierte el string a bytes
-      buffer: Buffer.from('This is test content')
-    });
+
+    // Paso 2: Localizar el primer input de tipo file
+    // Sintaxis: page.locator('selector').first()
+    // Hint: Usa 'input[type="file"]' como selector
+    
+    
+
+    // Paso 3: Subir un archivo creado dinámicamente con setInputFiles()
+    // Sintaxis: await fileInput.setInputFiles({ name: 'archivo.txt', mimeType: 'text/plain', buffer: Buffer.from('contenido') })
+    // Hint: name es el nombre del archivo, mimeType define el tipo, buffer contiene los datos
+    // TODO: Crear un archivo llamado 'test.txt' con contenido 'This is test content'
+    
+    
+    
+    
+    
     
     /*
      * Otras formas de subir archivos:
@@ -130,29 +129,28 @@ test.describe('File Upload', () => {
   |--------------------------------------------------------------------------
   */
   test('upload multiple files', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // Paso 1: Navegar a la página de práctica
+    // Sintaxis: await page.goto('URL');
     
-    // Localizar el input que acepta múltiples archivos
-    // El selector [multiple] filtra solo inputs con atributo multiple
-    const fileInput = page.locator('input[type="file"][multiple]');
     
-    // Subir múltiples archivos simultáneamente
-    // setInputFiles() acepta un array de objetos de archivo
-    await fileInput.setInputFiles([
-      // Primer archivo
-      {
-        name: 'file1.txt',
-        mimeType: 'text/plain',
-        buffer: Buffer.from('File 1 content')
-      },
-      // Segundo archivo
-      {
-        name: 'file2.txt',
-        mimeType: 'text/plain',
-        buffer: Buffer.from('File 2 content')
-      }
-    ]);
+
+    // Paso 2: Localizar el input que acepta múltiples archivos
+    // Sintaxis: page.locator('selector')
+    // Hint: Usa 'input[type="file"][multiple]' - el atributo [multiple] es importante
+    
+    
+
+    // Paso 3: Subir múltiples archivos usando un array
+    // Sintaxis: await fileInput.setInputFiles([{archivo1}, {archivo2}])
+    // TODO: Crear dos archivos: 'file1.txt' con 'File 1 content' y 'file2.txt' con 'File 2 content'
+    // Hint: Cada objeto en el array debe tener name, mimeType y buffer
+    
+    
+    
+    
+    
+    
+    
     
     /*
      * Validaciones útiles después del upload:

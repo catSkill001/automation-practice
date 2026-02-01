@@ -48,18 +48,29 @@ test.describe('getByAltText Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('locate image by alt text', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
     
-    // Localizar la imagen por su atributo alt
-    // getByAltText busca elementos con alt="logo image"
-    const logoImage = page.getByAltText('logo image');
     
-    // Verificar que la imagen es visible en la página
+    
+    // TODO: Paso 2 - Localizar la imagen por su atributo alt
+    // Usa page.getByAltText('logo image') para encontrar la imagen
+    // getByAltText busca elementos con el atributo alt="logo image"
+    // Guarda el locator en una variable llamada 'logoImage'
+    // Sintaxis: const elemento = page.getByAltText('texto del alt')
+    
+    
+    
+    // TODO: Paso 3 - Verificar que la imagen es visible
+    // Usa expect().toBeVisible() para validar que la imagen se muestra
     // Esto valida que:
-    // 1. La imagen existe en el DOM
-    // 2. La imagen está renderizada y visible
-    // 3. El alt text está correctamente configurado
-    await expect(logoImage).toBeVisible();
+    //   1. La imagen existe en el DOM
+    //   2. La imagen está renderizada y visible
+    //   3. El alt text está correctamente configurado
+    // Sintaxis: await expect(locator).toBeVisible()
+    
+    
+    
   });
 });

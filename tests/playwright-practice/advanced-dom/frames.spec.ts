@@ -9,36 +9,51 @@ import { test, expect } from '@playwright/test';
 | - Usar frameLocator para acceder al contenido
 */
 test('interact with dynamically created iframe', async ({ page }) => {
-  await page.goto('/');
-
-  // Crear un iframe dinámicamente en la página
-  await page.evaluate(() => {
-    const iframe = document.createElement('iframe');
-    iframe.id = 'test-iframe';
-    iframe.srcdoc = `
-      <html>
-        <body>
-          <input type="text" id="name-input" placeholder="Enter name" />
-          <button id="submit-btn">Submit</button>
-          <div id="result"></div>
-        </body>
-      </html>
-    `;
-    document.body.appendChild(iframe);
-  });
-
-  // Esperar a que el iframe cargue
-  await page.waitForTimeout(500);
-
-  // Usar frameLocator para interactuar con el iframe
-  const frame = page.frameLocator('#test-iframe');
+  // Paso 1: Navegar a la página raíz
+  // Sintaxis: await page.goto('URL');
   
-  // Interactuar con elementos dentro del iframe
-  await frame.locator('#name-input').fill('John Doe');
-  await frame.locator('#submit-btn').click();
+  
 
-  // Validar que el input tiene el valor correcto
-  await expect(frame.locator('#name-input')).toHaveValue('John Doe');
+  // Paso 2: Crear un iframe dinámicamente usando page.evaluate()
+  // Sintaxis: await page.evaluate(() => { código_javascript })
+  // TODO: Ejecutar JavaScript para crear un iframe con id='test-iframe'
+  // Hint: Usar document.createElement('iframe'), establecer srcdoc con HTML, y appendChild
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  // Paso 3: Esperar a que el iframe cargue
+  // Sintaxis: await page.waitForTimeout(milisegundos);
+  
+  
+
+  // Paso 4: Obtener referencia al iframe usando frameLocator
+  // Sintaxis: page.frameLocator('selector')
+  // Hint: Usa '#test-iframe' como selector
+  
+  
+
+  // Paso 5: Interactuar con elementos dentro del iframe
+  // Sintaxis: await frame.locator('selector').fill('valor')
+  // TODO: Llenar el input '#name-input' con 'John Doe'
+  
+  
+
+  // Paso 6: Hacer click en el botón submit dentro del iframe
+  // Sintaxis: await frame.locator('selector').click()
+  
+  
+
+  // Paso 7: Validar que el input tiene el valor correcto
+  // Sintaxis: await expect(locator).toHaveValue('valor')
+  
+  
 });
 
 /*
@@ -50,48 +65,56 @@ test('interact with dynamically created iframe', async ({ page }) => {
 | - Cambiar entre frames
 */
 test('work with multiple iframes', async ({ page }) => {
-  await page.goto('/');
+  // Paso 1: Navegar a la página raíz
+  // Sintaxis: await page.goto('URL');
+  
+  
 
-  // Crear dos iframes
-  await page.evaluate(() => {
-    // Primer iframe
-    const iframe1 = document.createElement('iframe');
-    iframe1.id = 'iframe-1';
-    iframe1.srcdoc = `
-      <html>
-        <body>
-          <input type="text" id="input-1" value="" />
-        </body>
-      </html>
-    `;
-    document.body.appendChild(iframe1);
+  // Paso 2: Crear dos iframes usando page.evaluate()
+  // TODO: Crear iframe-1 con input id='input-1' e iframe-2 con input id='input-2'
+  // Hint: Crear ambos elementos iframe dentro del mismo page.evaluate()
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-    // Segundo iframe
-    const iframe2 = document.createElement('iframe');
-    iframe2.id = 'iframe-2';
-    iframe2.srcdoc = `
-      <html>
-        <body>
-          <input type="text" id="input-2" value="" />
-        </body>
-      </html>
-    `;
-    document.body.appendChild(iframe2);
-  });
+  // Paso 3: Esperar a que los iframes carguen
+  
+  
 
-  await page.waitForTimeout(500);
+  // Paso 4: Obtener referencia al primer iframe
+  // Sintaxis: page.frameLocator('selector')
+  
+  
 
-  // Interactuar con el primer iframe
-  const frame1 = page.frameLocator('#iframe-1');
-  await frame1.locator('#input-1').fill('Frame 1 Content');
+  // Paso 5: Llenar el input en el primer iframe
+  // TODO: Llenar '#input-1' con 'Frame 1 Content'
+  
+  
 
-  // Interactuar con el segundo iframe
-  const frame2 = page.frameLocator('#iframe-2');
-  await frame2.locator('#input-2').fill('Frame 2 Content');
+  // Paso 6: Obtener referencia al segundo iframe
+  
+  
 
-  // Validar ambos frames
-  await expect(frame1.locator('#input-1')).toHaveValue('Frame 1 Content');
-  await expect(frame2.locator('#input-2')).toHaveValue('Frame 2 Content');
+  // Paso 7: Llenar el input en el segundo iframe
+  // TODO: Llenar '#input-2' con 'Frame 2 Content'
+  
+  
+
+  // Paso 8: Validar ambos inputs
+  // Sintaxis: await expect(locator).toHaveValue('valor')
+  
+  
+  
 });
 
 /*
@@ -103,39 +126,53 @@ test('work with multiple iframes', async ({ page }) => {
 | - Interactuar con contenido del frame
 */
 test('access iframe using contentFrame method', async ({ page }) => {
-  await page.goto('/');
-
-  // Crear un iframe
-  await page.evaluate(() => {
-    const iframe = document.createElement('iframe');
-    iframe.id = 'content-frame';
-    iframe.srcdoc = `
-      <html>
-        <body>
-          <h1 id="heading">Hello from iframe</h1>
-          <input type="text" id="data-input" />
-        </body>
-      </html>
-    `;
-    document.body.appendChild(iframe);
-  });
-
-  await page.waitForTimeout(500);
-
-  // Obtener el elemento iframe
-  const iframeElement = page.locator('#content-frame');
+  // Paso 1: Navegar a la página raíz
   
-  // Obtener el frame usando contentFrame()
-  const frame = await iframeElement.contentFrame();
   
-  if (!frame) {
-    throw new Error('Frame not found');
-  }
 
-  // Interactuar con elementos dentro del frame
-  await frame.locator('#data-input').fill('Test Data');
+  // Paso 2: Crear un iframe con id='content-frame'
+  // TODO: El iframe debe contener un h1 con id='heading' y un input con id='data-input'
   
-  // Validar el texto del heading
-  await expect(frame.locator('#heading')).toHaveText('Hello from iframe');
-  await expect(frame.locator('#data-input')).toHaveValue('Test Data');
+  
+  
+  
+  
+  
+  
+  
+  
+
+  // Paso 3: Esperar a que el iframe cargue
+  
+  
+
+  // Paso 4: Localizar el elemento iframe
+  // Sintaxis: page.locator('selector')
+  
+  
+
+  // Paso 5: Obtener el frame usando el método contentFrame()
+  // Sintaxis: await iframeElement.contentFrame()
+  // Hint: Este método devuelve el Frame o null
+  
+  
+
+  // Paso 6: Validar que el frame existe
+  // TODO: Si frame es null, lanzar un error
+  
+  
+  
+  
+
+  // Paso 7: Llenar el input dentro del frame
+  // TODO: Llenar '#data-input' con 'Test Data'
+  
+  
+
+  // Paso 8: Validar contenido del frame
+  // TODO: Verificar que '#heading' tiene texto 'Hello from iframe'
+  // TODO: Verificar que '#data-input' tiene valor 'Test Data'
+  
+  
+  
 });

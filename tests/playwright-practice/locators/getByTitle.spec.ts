@@ -51,22 +51,40 @@ test.describe('getByTitle Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('locate elements by title attribute', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
     
-    // Localizar elemento con title "Home"
+    
+    
+    // TODO: Paso 2 - Localizar elemento con title "Home"
+    // Usa page.getByTitle('Home') para encontrar el elemento
     // getByTitle busca cualquier elemento con title="Home"
-    const homeElement = page.getByTitle('Home');
-    
-    // Verificar que el elemento con title "Home" es visible
     // El title se muestra como tooltip al hacer hover
-    await expect(homeElement).toBeVisible();
+    // Guarda el locator en una variable llamada 'homeElement'
+    // Sintaxis: const elemento = page.getByTitle('texto del title')
     
-    // Localizar el botón Save por su title attribute
+    
+    
+    // TODO: Paso 3 - Verificar que el elemento "Home" es visible
+    // Usa expect().toBeVisible() para validar que el elemento se muestra
+    // Sintaxis: await expect(locator).toBeVisible()
+    
+    
+    
+    // TODO: Paso 4 - Localizar el botón Save por su title
+    // Usa page.getByTitle('Save your changes') para encontrar el botón
     // Útil cuando el botón tiene un icono pero su función se describe en el title
-    const saveButton = page.getByTitle('Save your changes');
+    // Guarda el locator en una variable llamada 'saveButton'
+    // Sintaxis: const elemento = page.getByTitle('texto del title')
     
-    // Verificar que el botón Save es visible
-    await expect(saveButton).toBeVisible();
+    
+    
+    // TODO: Paso 5 - Verificar que el botón Save es visible
+    // Usa expect().toBeVisible() para validar que el botón se muestra
+    // Sintaxis: await expect(locator).toBeVisible()
+    
+    
+    
   });
 });

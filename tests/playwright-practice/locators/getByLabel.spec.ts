@@ -59,39 +59,45 @@ test.describe('getByLabel Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('fill form using getByLabel', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
+    
     
     // === Campo de Email ===
-    // Localizar el input asociado al label "Email Address"
-    const emailInput = page.getByLabel('Email Address');
+    // TODO: Paso 2 - Localizar el campo "Email Address"
+    // Usa page.getByLabel() con el texto 'Email Address'
+    // Guarda el locator en emailInput
     
-    // Llenar con un email de prueba
-    await emailInput.fill('test@example.com');
     
-    // Validar que el email se guardó correctamente
-    await expect(emailInput).toHaveValue('test@example.com');
+    // TODO: Paso 3 - Llenar el campo con 'test@example.com'
+    // Usa el método .fill()
+    
+    
+    // TODO: Paso 4 - Validar que el email se guardó correctamente
+    // Usa expect() con toHaveValue('test@example.com')
+    
     
     // === Campo de Password ===
-    // Localizar el input asociado al label "Password"
-    const passwordInput = page.getByLabel('Password');
+    // TODO: Paso 5 - Localizar el campo "Password"
+    // Usa page.getByLabel('Password') y guárdalo en passwordInput
     
-    // Llenar con un password de prueba
-    // Nota: Playwright NO oculta visualmente el texto en logs
-    await passwordInput.fill('SecurePass123');
     
-    // Validar que el password se guardó (el valor está en el DOM)
-    await expect(passwordInput).toHaveValue('SecurePass123');
+    // TODO: Paso 6 - Llenar con 'SecurePass123'
+    
+    
+    // TODO: Paso 7 - Validar que el password se guardó
+    
     
     // === Campo de Age ===
-    // Localizar el input asociado al label "Your Age"
-    const ageInput = page.getByLabel('Your Age');
+    // TODO: Paso 8 - Localizar el campo "Your Age"
+    // Guárdalo en ageInput
     
-    // Llenar con un número (fill acepta strings)
-    await ageInput.fill('25');
     
-    // Validar que la edad se guardó correctamente
-    await expect(ageInput).toHaveValue('25');
+    // TODO: Paso 9 - Llenar con '25'
+    // Nota: fill() acepta strings, no es necesario convertir a número
+    
+    
+    // TODO: Paso 10 - Validar que la edad se guardó
+    
   });
 
   /*
@@ -123,20 +129,24 @@ test.describe('getByLabel Locators', () => {
   |--------------------------------------------------------------------------
   */
   test('select radio button using getByLabel', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
+    // TODO: Paso 1 - Navegar a la página de práctica
     
-    // Localizar el radio button asociado al label "Standard"
-    // getByLabel busca el input conectado al label que contiene "Standard"
-    const standardRadio = page.getByLabel('Standard');
     
-    // Seleccionar el radio button
-    // check() es preferible a click() para elementos checkables
-    // porque comunica claramente la intención
-    await standardRadio.check();
+    // TODO: Paso 2 - Localizar el radio button "Standard"
+    // Usa page.getByLabel() con el texto 'Standard'
+    // Guarda el locator en standardRadio
+    // Sintaxis: page.getByLabel('texto-del-label')
     
-    // Validar que el radio button quedó seleccionado
-    // toBeChecked() verifica el estado 'checked' del input
-    await expect(standardRadio).toBeChecked();
+    
+    // TODO: Paso 3 - Seleccionar el radio button
+    // Usa el método .check() (NO uses click())
+    // check() es más semántico para elementos checkables
+    // Ejemplo: await variable.check();
+    
+    
+    // TODO: Paso 4 - Validar que el radio button está seleccionado
+    // Usa expect() con toBeChecked()
+    // Sintaxis: await expect(variable).toBeChecked();
+    
   });
 });

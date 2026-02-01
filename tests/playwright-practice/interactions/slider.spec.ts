@@ -60,17 +60,26 @@ test.describe('Slider', () => {
   |--------------------------------------------------------------------------
   */
   test('interact with slider', async ({ page }) => {
-    // Navegar a la página de práctica
-    await page.goto('/p/playwrightpractice.html');
-    
-    // Verificar que la sección de Slider existe
-    // Esto valida que el componente está en la página
-    await expect(page.getByText('Slider')).toBeVisible();
-    
-    // Verificar que el texto del rango de precios es visible
-    // "Price range:" indica que el slider está configurado
-    await expect(page.locator('text=Price range:')).toBeVisible();
-    
+    // Paso 1: Navegar a la página de práctica
+    // TODO: Usa page.goto() para navegar a '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto(url)
+
+
+
+    // Paso 2: Verificar que la sección de Slider existe
+    // TODO: Usa page.getByText('Slider') para localizar el heading
+    // Sintaxis: await expect(page.getByText(texto)).toBeVisible()
+    // Hint: Esto valida que el componente está en la página
+
+
+
+    // Paso 3: Verificar que el texto del rango de precios es visible
+    // TODO: Usa page.locator('text=Price range:') para buscar el texto
+    // Sintaxis: await expect(page.locator(selector)).toBeVisible()
+    // Hint: "Price range:" indica que el slider está configurado
+
+
+
     /*
      * Para manipular un slider en un test real:
      * 
