@@ -53,3 +53,4 @@ npx playwright show-report
 ## CI/CD
 
 Incluye workflow de GitHub Actions que ejecuta tests automáticamente en push/PR.
+Los tests corren headless en CI para compatibilidad con Ubuntu.
