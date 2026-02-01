@@ -7,7 +7,7 @@ Proyecto de práctica para automatización de pruebas web usando Playwright.
 Este repositorio tiene dos ramas con propósitos específicos:
 
 - **`main`** (actual): Implementación completa con todos los tests resueltos. Úsala como referencia para ver las soluciones.
-- **`template`**: Tests con estructura vacía y comentarios TODO. Úsala como base para practicar.
+- **`template`**: Tests con estructura vacía y comentarios ToDo's. Úsala como base para practicar.
 
 ### Flujo de Trabajo para Practicar
 
