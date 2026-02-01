@@ -34,6 +34,13 @@ Esta es la rama **`template`** con tests incompletos. Sigue estos pasos:
 
 6. **¿Necesitas ayuda?** Consulta la rama `main` para ver las soluciones completas.
 
+## Estructura de Ramas
+
+Este repositorio tiene dos ramas con propósitos específicos:
+
+- **`main`**: Implementación completa con todos los tests resueltos. Úsala como referencia para ver las soluciones.
+- **`template`** (actual): Tests con estructura vacía y comentarios TODO. Úsala como base para practicar.
+
 ## Descripción
 
 Colección de tests automatizados para practicar diferentes funcionalidades de Playwright, enfocados en interacciones comunes de páginas web.

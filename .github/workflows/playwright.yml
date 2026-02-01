@@ -6,11 +6,13 @@ on:
       - master
       - 'practice/**'
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    env:
+      CI: true  # Explicitly set CI env for consistency
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4

@@ -1,3 +1,6 @@
 node_modules/
 test-results/
 playwright-report/
+
+# Variables de entorno
+.env
