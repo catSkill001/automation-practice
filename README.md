@@ -90,8 +90,17 @@ npx playwright show-report
     - `frames.spec.ts`: Trabajo con iframes (3 tests)
     - `windows.spec.ts`: Múltiples ventanas y tabs (3 tests)
     - `shadow-dom.spec.ts`: Trabajo con Shadow DOM (5 tests)
+  - **Archivos:**
+    - `file-upload.spec.ts`: Subida de archivos (3 tests)
+    - `file-download.spec.ts`: Descarga de archivos (2 tests)
+  - **Navegación y teclado:**
+    - `scroll.spec.ts`: Acciones de scroll (4 tests)
+    - `keyboard.spec.ts`: Atajos de teclado (4 tests)
+  - **Interacciones avanzadas:**
+    - `context-menu.spec.ts`: Menú contextual (2 tests)
+    - `modal.spec.ts`: Modales HTML (3 tests)
 
-**Total: 16 archivos de test con cobertura completa de la página**
+**Total: 22 archivos de test con cobertura completa de la página**
 
 ## Lista completa de casos de prueba
 
@@ -175,7 +184,40 @@ npx playwright show-report
   - • query multiple elements in shadow dom
   - • work with shadow dom slots
 
-**Total: 42 casos de prueba organizados en 16 archivos**
+### 📁 Archivos (5 tests)
+- `file-upload.spec.ts`
+  - • upload single file
+  - • upload multiple files
+  - • remove uploaded file
+
+- `file-download.spec.ts`
+  - • download file
+  - • download and verify file content
+
+### ⌨️ Navegación y teclado (8 tests)
+- `scroll.spec.ts`
+  - • scroll to element
+  - • scroll to specific position
+  - • infinite scroll load more content
+  - • scroll to top
+
+- `keyboard.spec.ts`
+  - • use keyboard shortcuts
+  - • navigate with tab key
+  - • submit form with enter key
+  - • close modal with escape key
+
+### 🖱️ Interacciones avanzadas (5 tests)
+- `context-menu.spec.ts`
+  - • right click to show context menu
+  - • select item from context menu
+
+- `modal.spec.ts`
+  - • open and close modal
+  - • interact with modal content
+  - • close modal with backdrop
+
+**Total: 60 casos de prueba organizados en 22 archivos**
 
 ### Archivos de configuración
 
