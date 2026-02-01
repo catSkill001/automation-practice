@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "playwright test",
+    "test:dev": "cross-env ENVIRONMENT=dev playwright test",
+    "test:qa": "cross-env ENVIRONMENT=qa playwright test",
+    "test:stage": "cross-env ENVIRONMENT=stage playwright test",
+    "test:prod": "cross-env ENVIRONMENT=prod playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +23,7 @@
   },
   "devDependencies": {
     "@types/dotenv": "^6.1.1",
-    "@types/node": "^25.1.0"
+    "@types/node": "^25.1.0",
+    "cross-env": "^10.1.0"
   }
 }
