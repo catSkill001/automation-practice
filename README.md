@@ -104,118 +104,118 @@ npx playwright show-report
 
 ## Lista completa de casos de prueba
 
-### 📋 Básicos (1 test)
+### Básicos (1 test)
 - `smoke.spec.ts`
-  - • smoke - page loads
+  - smoke - page loads
 
-### 🔔 Diálogos del navegador (4 tests)
+### Diálogos del navegador (4 tests)
 - `alerts.spec.ts`
-  - • simple alert - accept
-  - • confirmation alert - accept
-  - • confirmation alert - dismiss
-  - • prompt alert - input text and accept
+  - simple alert - accept
+  - confirmation alert - accept
+  - confirmation alert - dismiss
+  - prompt alert - input text and accept
 
-### 📝 Formularios (10 tests)
+### Formularios (10 tests)
 - `forms.spec.ts`
-  - • fill input fields
-  - • fill textarea field
-  - • select checkboxes
-  - • select radio buttons
+  - fill input fields
+  - fill textarea field
+  - select checkboxes
+  - select radio buttons
 
 - `dropdowns.spec.ts`
-  - • select from dropdown
-  - • select from dropdown by label
-  - • select multiple options from dropdown
+  - select from dropdown
+  - select from dropdown by label
+  - select multiple options from dropdown
 
 - `datepicker.spec.ts`
-  - • select date from datepicker
-  - • navigate months in datepicker
-  - • type date directly in datepicker
+  - select date from datepicker
+  - navigate months in datepicker
+  - type date directly in datepicker
 
-### 🖱️ Interacciones (5 tests)
+### Interacciones (5 tests)
 - `doubleclick.spec.ts`
-  - • double click copies text from Field1 to Field2
+  - double click copies text from Field1 to Field2
 
 - `dragdrop.spec.ts`
-  - • drag element to target
+  - drag element to target
 
 - `hover.spec.ts`
-  - • hover over element to show tooltip
-  - • hover to reveal dropdown menu
-  - • hover and click revealed element
+  - hover over element to show tooltip
+  - hover to reveal dropdown menu
+  - hover and click revealed element
 
-### 🎨 Componentes UI (11 tests)
+### Componentes UI (11 tests)
 - `table.spec.ts`
-  - • validate data in static web table
+  - validate data in static web table
 
 - `accordion.spec.ts`
-  - • expand and collapse accordion section
-  - • navigate multiple accordion sections
-  - • verify accordion section content
+  - expand and collapse accordion section
+  - navigate multiple accordion sections
+  - verify accordion section content
 
 - `tabs.spec.ts`
-  - • switch between tabs
-  - • verify tab content
+  - switch between tabs
+  - verify tab content
 
 - `sliders.spec.ts`
-  - • drag slider to specific value
-  - • set slider to min and max values
-  - • drag slider with mouse
+  - drag slider to specific value
+  - set slider to min and max values
+  - drag slider with mouse
 
 - `resizable.spec.ts`
-  - • resize element by dragging
-  - • resize element with constraints
+  - resize element by dragging
+  - resize element with constraints
 
-### 🚀 Avanzados (11 tests)
+### Avanzados (11 tests)
 - `frames.spec.ts`
-  - • interact with iframe content
-  - • work with multiple iframes
-  - • switch frame context
+  - interact with iframe content
+  - work with multiple iframes
+  - switch frame context
 
 - `windows.spec.ts`
-  - • open and switch to new window
-  - • handle multiple windows
-  - • close opened window
+  - open and switch to new window
+  - handle multiple windows
+  - close opened window
 
 - `shadow-dom.spec.ts`
-  - • access element inside shadow dom
-  - • click button inside shadow dom
-  - • access nested shadow dom
-  - • query multiple elements in shadow dom
-  - • work with shadow dom slots
+  - access element inside shadow dom
+  - click button inside shadow dom
+  - access nested shadow dom
+  - query multiple elements in shadow dom
+  - work with shadow dom slots
 
-### 📁 Archivos (5 tests)
+### Archivos (5 tests)
 - `file-upload.spec.ts`
-  - • upload single file
-  - • upload multiple files
-  - • remove uploaded file
+  - upload single file
+  - upload multiple files
+  - remove uploaded file
 
 - `file-download.spec.ts`
-  - • download file
-  - • download and verify file content
+  - download file
+  - download and verify file content
 
-### ⌨️ Navegación y teclado (8 tests)
+### Navegación y teclado (8 tests)
 - `scroll.spec.ts`
-  - • scroll to element
-  - • scroll to specific position
-  - • infinite scroll load more content
-  - • scroll to top
+  - scroll to element
+  - scroll to specific position
+  - infinite scroll load more content
+  - scroll to top
 
 - `keyboard.spec.ts`
-  - • use keyboard shortcuts
-  - • navigate with tab key
-  - • submit form with enter key
-  - • close modal with escape key
+  - use keyboard shortcuts
+  - navigate with tab key
+  - submit form with enter key
+  - close modal with escape key
 
-### 🖱️ Interacciones avanzadas (5 tests)
+### Interacciones avanzadas (5 tests)
 - `context-menu.spec.ts`
-  - • right click to show context menu
-  - • select item from context menu
+  - right click to show context menu
+  - select item from context menu
 
 - `modal.spec.ts`
-  - • open and close modal
-  - • interact with modal content
-  - • close modal with backdrop
+  - open and close modal
+  - interact with modal content
+  - close modal with backdrop
 
 **Total: 60 casos de prueba organizados en 22 archivos**
 
