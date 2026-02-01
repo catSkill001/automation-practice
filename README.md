@@ -16,21 +16,21 @@ Suite de tests end-to-end con **53 casos de prueba** organizados en 10 categorí
 - Ejemplos de sintaxis y hints de APIs de Playwright
 - Espacios para escribir tu código
 
-### Tests Básicos (31 ejercicios - TC-001 a TC-023)
+### Tests Básicos (31 ejercicios - TC-001 a TC-031)
 
 - **Locators** (7 tests): 7 estrategias de localización (getByRole, getByText, getByLabel, getByPlaceholder, getByAltText, getByTitle, getByTestId)
 - **Tables** (2 tests): Interacción con tablas estáticas y con paginación
 - **Interactions** (8 tests): Alertas, mouse actions, drag & drop, sliders
 - **Files** (4 tests): Upload de archivos individuales y múltiples
 - **Navigation** (4 tests): Tabs, ventanas y contenido dinámico
-- **Advanced DOM** (6 tests): iframes y Shadow DOM para entrevistas técnicas
+- **Advanced DOM** (8 tests): iframes (3 tests - TC-024 a TC-026) y Shadow DOM (5 tests - TC-027 a TC-031) para entrevistas técnicas
 
-### Features Avanzadas (22 ejercicios - TC-024 a TC-045)
+### Features Avanzadas (22 ejercicios - TC-032 a TC-053)
 
-- **API Tests** (5 tests - TC-024 a TC-028): Testing de APIs REST sin browser
-- **Visual Regression** (5 tests - TC-029 a TC-033): Detección de cambios visuales con screenshots
-- **Accessibility** (6 tests - TC-034 a TC-039): Validación WCAG con axe-core
-- **Page Object Model** (6 tests - TC-040 a TC-045): Patrón de diseño para mantenibilidad
+- **API Tests** (5 tests - TC-032 a TC-036): Testing de APIs REST sin browser
+- **Visual Regression** (5 tests - TC-037 a TC-041): Detección de cambios visuales con screenshots
+- **Accessibility** (6 tests - TC-042 a TC-047): Validación WCAG con axe-core
+- **Page Object Model** (6 tests - TC-048 a TC-053): Patrón de diseño para mantenibilidad
 
 ## Prerrequisitos
 
@@ -193,12 +193,12 @@ npx playwright show-report
 5. **Navigation** (4 tests) - Navegación avanzada
    - windows-tabs → dynamic-content
 
-6. **Advanced DOM** (6 tests) - Conceptos para entrevistas
-   - frames → shadow-dom
+6. **Advanced DOM** (8 tests) - Conceptos para entrevistas
+   - frames (TC-024 a TC-026) → shadow-dom (TC-027 a TC-031)
 
 #### Nivel 2: Features Avanzadas
 
-1. **API Tests** (5 tests - TC-024 a TC-028)
+1. **API Tests** (5 tests - TC-032 a TC-036)
 
 - GET requests básicos
 - POST requests con data
@@ -206,7 +206,7 @@ npx playwright show-report
 - Headers personalizados
 - Manejo de errores 404
 
-1. **Visual Regression** (5 tests - TC-029 a TC-033)
+1. **Visual Regression** (5 tests - TC-037 a TC-041)
 
 - Screenshots de página completa
 - Screenshots de elementos específicos
@@ -214,7 +214,7 @@ npx playwright show-report
 - Thresholds personalizados
 - Estados específicos de UI
 
-1. **Accessibility** (6 tests - TC-034 a TC-039)
+1. **Accessibility** (6 tests - TC-042 a TC-047)
 
 - Scan completo con axe-core
 - Validación WCAG Level A/AA
@@ -223,7 +223,7 @@ npx playwright show-report
 - Validación de contraste de colores
 - Reportes detallados
 
-1. **Page Object Model** (6 tests - TC-040 a TC-045)
+1. **Page Object Model** (6 tests - TC-048 a TC-053)
 
 - Implementar base.page.ts
 - Implementar practice.page.ts con locators
@@ -468,9 +468,9 @@ node --version
 
 ## Próximos pasos
 
-Una vez que completes los tests básicos (TC-001 a TC-023), puedes continuar con features avanzadas:
+Una vez que completes los tests básicos (TC-001 a TC-031), puedes continuar con features avanzadas:
 
-### API Testing (TC-024 a TC-028)
+### API Testing (TC-032 a TC-036)
 
 **Qué aprenderás:**
 
@@ -486,13 +486,13 @@ No requiere instalación adicional, usa el fixture `request` incluido en Playwri
 
 **Ejercicios:**
 
-- TC-024: GET request básico con validación
-- TC-025: POST request creando recursos
-- TC-026: Validar y filtrar arrays
-- TC-027: Enviar headers personalizados
-- TC-028: Manejar errores 404
+- TC-032: GET request básico con validación
+- TC-033: POST request creando recursos
+- TC-034: Validar y filtrar arrays
+- TC-035: Enviar headers personalizados
+- TC-036: Manejar errores 404
 
-### Visual Regression Testing (TC-029 a TC-033)
+### Visual Regression Testing (TC-037 a TC-041)
 
 **Qué aprenderás:**
 
@@ -517,13 +517,13 @@ npx playwright test visual
 
 **Ejercicios:**
 
-- TC-029: Screenshot de página completa
-- TC-030: Screenshot de elemento específico
-- TC-031: Máscaras para elementos dinámicos
-- TC-032: Threshold personalizado
-- TC-033: Capturar estados específicos (modals, dropdowns)
+- TC-037: Screenshot de página completa
+- TC-038: Screenshot de elemento específico
+- TC-039: Máscaras para elementos dinámicos
+- TC-040: Threshold personalizado
+- TC-041: Capturar estados específicos (modals, dropdowns)
 
-### Accessibility Testing (TC-034 a TC-039)
+### Accessibility Testing (TC-042 a TC-047)
 
 **Qué aprenderás:**
 
@@ -542,12 +542,12 @@ npm install --save-dev @axe-core/playwright
 
 **Ejercicios:**
 
-- TC-034: Scan completo de página
-- TC-035: Validación WCAG Level A/AA
-- TC-036: Accesibilidad de formularios
-- TC-037: Excluir elementos third-party
-- TC-038: Validación de contraste de colores
-- TC-039: Reporte detallado con todos los datos
+- TC-042: Scan completo de página
+- TC-043: Validación WCAG Level A/AA
+- TC-044: Accesibilidad de formularios
+- TC-045: Excluir elementos third-party
+- TC-046: Validación de contraste de colores
+- TC-047: Reporte detallado con todos los datos
 
 **Niveles WCAG:**
 
@@ -555,7 +555,7 @@ npm install --save-dev @axe-core/playwright
 - Level AA: Estándar recomendado (incluye contraste 4.5:1)
 - Level AAA: Nivel más alto (contraste 7:1)
 
-### Page Object Model (TC-040 a TC-045)
+### Page Object Model (TC-048 a TC-053)
 
 **Qué aprenderás:**
 
@@ -572,12 +572,12 @@ npm install --save-dev @axe-core/playwright
 
 **Ejercicios:**
 
-- TC-040: Interacción básica con botones
-- TC-041: Llenar formulario con método de alto nivel
-- TC-042: Seleccionar opciones (radio/checkboxes)
-- TC-043: Manejar alerts con POM
-- TC-044: Leer datos de tabla
-- TC-045: Workflow completo usando POM
+- TC-048: Interacción básica con botones
+- TC-049: Llenar formulario con método de alto nivel
+- TC-050: Seleccionar opciones (radio/checkboxes)
+- TC-051: Manejar alerts con POM
+- TC-052: Leer datos de tabla
+- TC-053: Workflow completo usando POM
 
 **Ventajas del POM:**
 

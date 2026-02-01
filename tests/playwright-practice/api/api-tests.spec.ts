@@ -26,7 +26,7 @@ test.describe('API Testing', () => {
   
   /*
   |--------------------------------------------------------------------------
-  | TC-024: GET request - Obtener un usuario individual
+  | TC-032: GET request - Obtener un usuario individual
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Validar que se puede obtener información de un usuario específico
@@ -55,7 +55,7 @@ test.describe('API Testing', () => {
   |   - toHaveProperty(): Valida existencia de propiedades
   |--------------------------------------------------------------------------
   */
-  test('TC-024: GET request to retrieve a single user', async ({ request }) => {
+  test('TC-032: GET request to retrieve a single user', async ({ request }) => {
     // TODO: Paso 1 - Hacer GET request a JSONPlaceholder
     // Usa request.get() con la URL 'https://jsonplaceholder.typicode.com/users/1'
     // Guarda el resultado en una variable llamada response
@@ -96,7 +96,7 @@ test.describe('API Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-025: POST request - Crear un nuevo recurso
+  | TC-033: POST request - Crear un nuevo recurso
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Demostrar cómo enviar datos mediante POST request
@@ -119,7 +119,7 @@ test.describe('API Testing', () => {
   |   - response.status(): Obtiene el código de status HTTP
   |--------------------------------------------------------------------------
   */
-  test('TC-025: POST request to create a new resource', async ({ request }) => {
+  test('TC-033: POST request to create a new resource', async ({ request }) => {
     // TODO: Paso 1 - Crear objeto con los datos del nuevo post
     // Crea un objeto llamado newPost con:
     // - title: 'Test Post from Playwright'
@@ -164,7 +164,7 @@ test.describe('API Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-026: Validación de arrays - Filtrar datos de una colección
+  | TC-034: Validación de arrays - Filtrar datos de una colección
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Trabajar con endpoints que retornan arrays y aplicar filtros
@@ -188,7 +188,7 @@ test.describe('API Testing', () => {
   |   - toBeGreaterThan(): Compara números
   |--------------------------------------------------------------------------
   */
-  test('TC-026: Validate array response and filter data', async ({ request }) => {
+  test('TC-034: Validate array response and filter data', async ({ request }) => {
     // TODO: Paso 1 - Obtener todos los usuarios
     // Haz GET request a 'https://jsonplaceholder.typicode.com/users'
     // Guarda en response
@@ -227,7 +227,7 @@ test.describe('API Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-027: Headers personalizados - Enviar metadata adicional
+  | TC-035: Headers personalizados - Enviar metadata adicional
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Demostrar cómo incluir headers personalizados en requests
@@ -253,7 +253,7 @@ test.describe('API Testing', () => {
   |   - JSONPlaceholder no requiere auth, pero acepta headers
   |--------------------------------------------------------------------------
   */
-  test('TC-027: Send custom headers in request', async ({ request }) => {
+  test('TC-035: Send custom headers in request', async ({ request }) => {
     // TODO: Paso 1 - Hacer request con headers personalizados
     // Usa request.get() con:
     // - URL: 'https://jsonplaceholder.typicode.com/users/1'
@@ -285,7 +285,7 @@ test.describe('API Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-028: Manejo de errores - Validar status 404
+  | TC-036: Manejo de errores - Validar status 404
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Validar que la API maneja correctamente recursos inexistentes
@@ -307,7 +307,7 @@ test.describe('API Testing', () => {
   |   - toBeFalsy(): Valida valores falsy (false, 0, null, undefined)
   |--------------------------------------------------------------------------
   */
-  test('TC-028: Handle 404 error when resource does not exist', async ({ request }) => {
+  test('TC-036: Handle 404 error when resource does not exist', async ({ request }) => {
     // TODO: Paso 1 - Intentar obtener usuario inexistente
     // Haz GET request a 'https://jsonplaceholder.typicode.com/users/999'
     // JSONPlaceholder retorna 404 para IDs que no existen

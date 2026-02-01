@@ -34,7 +34,7 @@ test.describe('Visual Regression Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-029: Screenshot de página completa
+  | TC-037: Screenshot de página completa
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Capturar y comparar la página completa incluyendo scroll
@@ -65,7 +65,7 @@ test.describe('Visual Regression Testing', () => {
   |   - El nombre del archivo debe ser descriptivo y único
   |--------------------------------------------------------------------------
   */
-  test('TC-029: Full page screenshot comparison', async ({ page }) => {
+  test('TC-037: Full page screenshot comparison', async ({ page }) => {
     // TODO: Paso 1 - Navegar a la página
     // Usa page.goto() con la ruta '/p/playwrightpractice.html'
     
@@ -98,7 +98,7 @@ test.describe('Visual Regression Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-030: Screenshot de elemento específico
+  | TC-038: Screenshot de elemento específico
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Capturar solo un elemento específico en lugar de toda la página
@@ -123,7 +123,7 @@ test.describe('Visual Regression Testing', () => {
   |   - Más resistente a cambios fuera del componente
   |--------------------------------------------------------------------------
   */
-  test('TC-030: Element screenshot comparison', async ({ page }) => {
+  test('TC-038: Element screenshot comparison', async ({ page }) => {
     // TODO: Paso 1 - Navegar a la página
     await page.goto('/p/playwrightpractice.html');
     await page.waitForLoadState('networkidle');
@@ -151,7 +151,7 @@ test.describe('Visual Regression Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-031: Screenshot con elementos enmascarados
+  | TC-039: Screenshot con elementos enmascarados
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Excluir elementos dinámicos de la comparación usando masks
@@ -179,7 +179,7 @@ test.describe('Visual Regression Testing', () => {
   |   - Útil para contenido que cambia frecuentemente
   |--------------------------------------------------------------------------
   */
-  test('TC-031: Screenshot with masked dynamic elements', async ({ page }) => {
+  test('TC-039: Screenshot with masked dynamic elements', async ({ page }) => {
     await page.goto('/p/playwrightpractice.html');
     await page.waitForLoadState('networkidle');
     
@@ -216,7 +216,7 @@ test.describe('Visual Regression Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-032: Screenshot con threshold personalizado
+  | TC-040: Screenshot con threshold personalizado
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Configurar tolerancia a diferencias pixel por pixel
@@ -241,7 +241,7 @@ test.describe('Visual Regression Testing', () => {
   |   - Ajusta según necesidades de tu proyecto
   |--------------------------------------------------------------------------
   */
-  test('TC-032: Screenshot with custom threshold', async ({ page }) => {
+  test('TC-040: Screenshot with custom threshold', async ({ page }) => {
     await page.goto('/p/playwrightpractice.html');
     await page.waitForLoadState('networkidle');
     
@@ -281,7 +281,7 @@ test.describe('Visual Regression Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-033: Screenshot de estado específico - Modal abierto
+  | TC-041: Screenshot de estado específico - Modal abierto
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Capturar screenshot de un estado específico de la UI (modal abierto)
@@ -309,7 +309,7 @@ test.describe('Visual Regression Testing', () => {
   |   - Útil para componentes overlay
   |--------------------------------------------------------------------------
   */
-  test('TC-033: Screenshot of specific UI state (modal opened)', async ({ page }) => {
+  test('TC-041: Screenshot of specific UI state (modal opened)', async ({ page }) => {
     await page.goto('/p/playwrightpractice.html');
     await page.waitForLoadState('networkidle');
     

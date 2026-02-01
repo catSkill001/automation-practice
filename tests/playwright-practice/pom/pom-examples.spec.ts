@@ -40,7 +40,7 @@ test.describe('Page Object Model Examples', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-040: Interacción básica con botones usando POM
+  | TC-048: Interacción básica con botones usando POM
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Demostrar cómo usar el page object para interacciones simples
@@ -70,7 +70,7 @@ test.describe('Page Object Model Examples', () => {
   |   - Tests más limpios y legibles
   |--------------------------------------------------------------------------
   */
-  test('TC-040: Interact with buttons using POM', async ({ page }) => {
+  test('TC-048: Interact with buttons using POM', async ({ page }) => {
     // TODO: Paso 1 - Configurar handler para alert
     // Usa page.on('dialog') para aceptar el alert automáticamente
     // Sintaxis:
@@ -99,7 +99,7 @@ test.describe('Page Object Model Examples', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-041: Llenar formulario usando método de alto nivel
+  | TC-049: Llenar formulario usando método de alto nivel
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Demostrar cómo métodos de alto nivel simplifican tests
@@ -129,7 +129,7 @@ test.describe('Page Object Model Examples', () => {
   |   - Tests más declarativos (qué hacer vs cómo hacerlo)
   |--------------------------------------------------------------------------
   */
-  test('TC-041: Fill form using high-level method', async ({ page }) => {
+  test('TC-049: Fill form using high-level method', async ({ page }) => {
     // TODO: Paso 1 - Llenar formulario usando POM
     // Usa practicePage.fillContactForm() con:
     // - name: 'John Doe'
@@ -169,7 +169,7 @@ test.describe('Page Object Model Examples', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-042: Seleccionar opciones usando POM
+  | TC-050: Seleccionar opciones usando POM
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Demostrar métodos para interactuar con radio buttons
@@ -189,7 +189,7 @@ test.describe('Page Object Model Examples', () => {
   |   - Validación de estado de elementos
   |--------------------------------------------------------------------------
   */
-  test('TC-042: Select radio buttons using POM', async ({ page }) => {
+  test('TC-050: Select radio buttons using POM', async ({ page }) => {
     // TODO: Paso 1 - Seleccionar 'male' usando POM
     // Usa practicePage.selectGender('male')
     // Sintaxis: await practicePage.selectGender('male');
@@ -223,7 +223,7 @@ test.describe('Page Object Model Examples', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-043: Manejar alerts con métodos del POM
+  | TC-051: Manejar alerts con métodos del POM
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Combinar handlers de dialog con métodos del page object
@@ -242,7 +242,7 @@ test.describe('Page Object Model Examples', () => {
   |   - Separación de concerns: handlers en test, locators en POM
   |--------------------------------------------------------------------------
   */
-  test('TC-043: Handle alerts with POM methods', async ({ page }) => {
+  test('TC-051: Handle alerts with POM methods', async ({ page }) => {
     let dialogMessage = '';
     
     // TODO: Paso 1 - Configurar handler para capturar mensaje
@@ -275,7 +275,7 @@ test.describe('Page Object Model Examples', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-044: Leer datos de tabla usando POM
+  | TC-052: Leer datos de tabla usando POM
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Usar métodos del POM para extraer datos de tablas
@@ -294,7 +294,7 @@ test.describe('Page Object Model Examples', () => {
   |   - Retornar datos estructurados para validaciones
   |--------------------------------------------------------------------------
   */
-  test('TC-044: Read table data using POM', async ({ page }) => {
+  test('TC-052: Read table data using POM', async ({ page }) => {
     // TODO: Paso 1 - Obtener primera fila de la tabla
     // Usa practicePage.getBookTableRow(0)
     // Sintaxis: const firstRow = await practicePage.getBookTableRow(0);
@@ -329,7 +329,7 @@ test.describe('Page Object Model Examples', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-045: Flujo completo usando POM (Fluent API)
+  | TC-053: Flujo completo usando POM (Fluent API)
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Demostrar un workflow completo encadenando métodos del POM
@@ -351,7 +351,7 @@ test.describe('Page Object Model Examples', () => {
   |   - Fluent API (si implementas métodos que retornan this)
   |--------------------------------------------------------------------------
   */
-  test('TC-045: Complete workflow using POM', async ({ page }) => {
+  test('TC-053: Complete workflow using POM', async ({ page }) => {
     // TODO: Paso 1 - Llenar formulario de contacto
     // await practicePage.fillContactForm(
     //   'Jane Smith',

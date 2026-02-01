@@ -2,13 +2,36 @@ import { test, expect } from '@playwright/test';
 
 /*
 |--------------------------------------------------------------------------
+| TC-024: Interactuar con iframe creado dinámicamente
+|--------------------------------------------------------------------------
 | FRAMES - CREATE AND INTERACT WITH IFRAME
 |--------------------------------------------------------------------------
-| Escenario:
-| - Crear un iframe dinámicamente para demostrar interacción
-| - Usar frameLocator para acceder al contenido
+| Objetivo:
+|   Demostrar cómo crear un iframe dinámicamente y acceder a su contenido
+| 
+| Precondiciones:
+|   - La página debe estar cargada
+| 
+| Pasos:
+|   1. Navegar a la página de práctica
+|   2. Crear un iframe dinámicamente con JavaScript
+|   3. Usar frameLocator para acceder al contenido
+|   4. Llenar input dentro del iframe
+|   5. Hacer click en botón dentro del iframe
+|   6. Validar valores en el iframe
+| 
+| Resultado esperado:
+|   - El iframe se crea correctamente
+|   - Se puede interactuar con elementos dentro del iframe
+|   - Las validaciones pasan
+| 
+| Conceptos clave:
+|   - frameLocator(): API moderna para trabajar con iframes
+|   - page.evaluate(): Ejecutar JavaScript en el contexto de la página
+|   - Los iframes aíslan su contenido del DOM principal
+|--------------------------------------------------------------------------
 */
-test('interact with dynamically created iframe', async ({ page }) => {
+test('TC-024: interact with dynamically created iframe', async ({ page }) => {
   // Paso 1: Navegar a la página raíz
   // Sintaxis: await page.goto('URL');
   
@@ -58,13 +81,35 @@ test('interact with dynamically created iframe', async ({ page }) => {
 
 /*
 |--------------------------------------------------------------------------
+| TC-025: Trabajar con múltiples iframes
+|--------------------------------------------------------------------------
 | FRAMES - WORK WITH MULTIPLE FRAMES
 |--------------------------------------------------------------------------
-| Escenario:
-| - Crear múltiples iframes
-| - Cambiar entre frames
+| Objetivo:
+|   Demostrar cómo manejar múltiples iframes en la misma página
+| 
+| Precondiciones:
+|   - La página debe estar cargada
+| 
+| Pasos:
+|   1. Navegar a la página de práctica
+|   2. Crear dos iframes dinámicamente
+|   3. Acceder al primer iframe y llenar su input
+|   4. Acceder al segundo iframe y llenar su input
+|   5. Validar valores en ambos iframes
+| 
+| Resultado esperado:
+|   - Ambos iframes se crean correctamente
+|   - Se puede cambiar entre iframes sin problemas
+|   - Los valores se mantienen en cada iframe
+| 
+| Conceptos clave:
+|   - Múltiples frameLocator() para diferentes iframes
+|   - Cada iframe es independiente
+|   - Los selectores son relativos al iframe, no a la página principal
+|--------------------------------------------------------------------------
 */
-test('work with multiple iframes', async ({ page }) => {
+test('TC-025: work with multiple iframes', async ({ page }) => {
   // Paso 1: Navegar a la página raíz
   // Sintaxis: await page.goto('URL');
   
@@ -119,13 +164,36 @@ test('work with multiple iframes', async ({ page }) => {
 
 /*
 |--------------------------------------------------------------------------
+| TC-026: Acceder a iframe usando contentFrame()
+|--------------------------------------------------------------------------
 | FRAMES - ACCESS FRAME WITH CONTENTFRAME
 |--------------------------------------------------------------------------
-| Escenario:
-| - Usar el método contentFrame() para acceder a frame desde elemento
-| - Interactuar con contenido del frame
+| Objetivo:
+|   Demostrar método alternativo contentFrame() para acceder a iframes
+| 
+| Precondiciones:
+|   - La página debe estar cargada
+| 
+| Pasos:
+|   1. Navegar a la página de práctica
+|   2. Crear un iframe con contenido
+|   3. Localizar el elemento iframe con locator()
+|   4. Usar contentFrame() para obtener el Frame
+|   5. Interactuar con elementos dentro del frame
+|   6. Validar contenido del frame
+| 
+| Resultado esperado:
+|   - El método contentFrame() retorna el Frame correctamente
+|   - Se puede interactuar con el contenido
+|   - Las validaciones pasan
+| 
+| Conceptos clave:
+|   - contentFrame(): Obtiene el Frame desde un elemento iframe
+|   - Diferencia entre frameLocator() y contentFrame()
+|   - contentFrame() puede retornar null si no es un iframe
+|--------------------------------------------------------------------------
 */
-test('access iframe using contentFrame method', async ({ page }) => {
+test('TC-026: access iframe using contentFrame method', async ({ page }) => {
   // Paso 1: Navegar a la página raíz
   
   

@@ -35,7 +35,7 @@ test.describe('Accessibility Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-034: Scan completo de accesibilidad
+  | TC-042: Scan completo de accesibilidad
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Ejecutar scan de accesibilidad completo en la página
@@ -67,7 +67,7 @@ test.describe('Accessibility Testing', () => {
   |   - violations: Array con reglas violadas
   |--------------------------------------------------------------------------
   */
-  test('TC-034: Full page accessibility scan', async ({ page }) => {
+  test('TC-042: Full page accessibility scan', async ({ page }) => {
     // TODO: Paso 1 - Navegar a la página
     // Usa page.goto() con la ruta '/p/playwrightpractice.html'
     
@@ -110,7 +110,7 @@ test.describe('Accessibility Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-035: Validar conformidad WCAG Level A y AA
+  | TC-043: Validar conformidad WCAG Level A y AA
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Ejecutar scan con tags específicos de WCAG Level A y AA
@@ -138,7 +138,7 @@ test.describe('Accessibility Testing', () => {
   |   - Enfoque en estándares específicos
   |--------------------------------------------------------------------------
   */
-  test('TC-035: WCAG Level A and AA compliance', async ({ page }) => {
+  test('TC-043: WCAG Level A and AA compliance', async ({ page }) => {
     await page.goto('/p/playwrightpractice.html');
     await page.waitForLoadState('networkidle');
     
@@ -178,7 +178,7 @@ test.describe('Accessibility Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-036: Validar accesibilidad de formularios
+  | TC-044: Validar accesibilidad de formularios
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Enfocarse en la accesibilidad de elementos de formulario
@@ -204,7 +204,7 @@ test.describe('Accessibility Testing', () => {
   |   - Selectores CSS para delimitar scope
   |--------------------------------------------------------------------------
   */
-  test('TC-036: Form accessibility validation', async ({ page }) => {
+  test('TC-044: Form accessibility validation', async ({ page }) => {
     await page.goto('/p/playwrightpractice.html');
     await page.waitForLoadState('networkidle');
     
@@ -246,7 +246,7 @@ test.describe('Accessibility Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-037: Excluir elementos de terceros del scan
+  | TC-045: Excluir elementos de terceros del scan
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Excluir widgets de terceros que no puedes controlar
@@ -272,7 +272,7 @@ test.describe('Accessibility Testing', () => {
   |   - Múltiples exclude: .exclude('#ads').exclude('.widget')
   |--------------------------------------------------------------------------
   */
-  test('TC-037: Exclude third-party elements from scan', async ({ page }) => {
+  test('TC-045: Exclude third-party elements from scan', async ({ page }) => {
     await page.goto('/p/playwrightpractice.html');
     await page.waitForLoadState('networkidle');
     
@@ -312,7 +312,7 @@ test.describe('Accessibility Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-038: Validar contraste de colores específicamente
+  | TC-046: Validar contraste de colores específicamente
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Enfocarse en validación de contraste de colores WCAG AA
@@ -340,7 +340,7 @@ test.describe('Accessibility Testing', () => {
   |   - withRules(): Ejecuta solo reglas específicas
   |--------------------------------------------------------------------------
   */
-  test('TC-038: Color contrast validation', async ({ page }) => {
+  test('TC-046: Color contrast validation', async ({ page }) => {
     await page.goto('/p/playwrightpractice.html');
     await page.waitForLoadState('networkidle');
     
@@ -386,7 +386,7 @@ test.describe('Accessibility Testing', () => {
 
   /*
   |--------------------------------------------------------------------------
-  | TC-039: Reporte detallado de accesibilidad
+  | TC-047: Reporte detallado de accesibilidad
   |--------------------------------------------------------------------------
   | Objetivo:
   |   Generar reporte completo con toda la información disponible
@@ -419,7 +419,7 @@ test.describe('Accessibility Testing', () => {
   |   - Cada violación tiene helpUrl con guía de remediación
   |--------------------------------------------------------------------------
   */
-  test('TC-039: Detailed accessibility report', async ({ page }) => {
+  test('TC-047: Detailed accessibility report', async ({ page }) => {
     await page.goto('/p/playwrightpractice.html');
     await page.waitForLoadState('networkidle');
     
