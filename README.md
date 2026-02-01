@@ -64,16 +64,16 @@ npx playwright show-report
 
 Cada test incluye:
 
-- ✅ **ID de caso de prueba** (TC-001, TC-002, etc.)
-- ✅ **Documentación JSDoc detallada** con descripción, objetivo y conceptos clave
-- ✅ **Comentarios inline** explicando cada paso
-- ✅ **Ejemplos de uso** de las APIs de Playwright
-- ✅ **Mejores prácticas** y alternativas de implementación
-- ✅ **Conceptos clave** explicados en español
+- **ID de caso de prueba** (TC-001, TC-002, etc.)
+- **Documentación JSDoc detallada** con descripción, objetivo y conceptos clave
+- **Comentarios inline** explicando cada paso
+- **Ejemplos de uso** de las APIs de Playwright
+- **Mejores prácticas** y alternativas de implementación
+- **Conceptos clave** explicados en español
 
 ## Conceptos clave cubiertos
 
-### 🎯 Locators (getByRole, getByText, getByLabel, etc.)
+### Locators (getByRole, getByText, getByLabel, etc.)
 
 Interacción con contenido dentro de iframes:
 
@@ -104,7 +104,7 @@ await page.getByLabel('Email').fill('test@test.com');
 await page.getByPlaceholder('Search...').fill('Playwright');
 ```
 
-### 📊 Tables
+### Tables
 
 Navegación y extracción de datos desde tablas HTML con paginación.
 
@@ -118,7 +118,7 @@ for (let i = 0; i < rows; i++) {
 }
 ```
 
-### 🖱️ Interactions
+### Interactions
 
 Simulación de acciones complejas:
 
@@ -136,7 +136,7 @@ page.on('dialog', async dialog => {
 await page.getByRole('button', { name: 'Alert' }).click();
 ```
 
-### 📁 File Upload
+### File Upload
 
 Upload de archivos usando `setInputFiles()`:
 
@@ -146,14 +146,14 @@ await page.locator('#fileInput').setInputFiles('path/to/file.pdf');
 await page.locator('#multipleFiles').setInputFiles(['file1.jpg', 'file2.png']);
 ```
 
-### 🔗 Navigation
+### Navigation
 
 Manejo de múltiples tabs/ventanas y contenido dinámico:
 
 **Ejemplo:**
 ```typescript
 const [newPage] = await Promise.all([
-### 🎯 Shadow DOM
+### Shadow DOM
 
 Acceso a elementos encapsulados en Shadow Root:
 
