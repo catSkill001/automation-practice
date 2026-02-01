@@ -3,18 +3,22 @@
 Proyecto de práctica para automatización de pruebas web usando Playwright.
 
 ## Descripción
+
 Colección de tests automatizados para practicar diferentes funcionalidades de Playwright, enfocados en interacciones comunes de páginas web.
 
 ## Prerrequisitos
+
 - Node.js (versión LTS recomendada)
 - npm
 
 ## Instalación
+
 ```bash
 npm install
 ```
 
 ## Ejecutar tests
+
 ```bash
 # Todos los tests
 npx playwright test
@@ -30,6 +34,7 @@ npx playwright show-report
 ```
 
 ## Estructura del proyecto
+
 - `tests/`: Archivos de pruebas
   - `smoke.spec.ts`: Test básico de carga de página
   - `alerts.spec.ts`: Manejo de alerts, confirms y prompts
@@ -40,9 +45,11 @@ npx playwright show-report
 - `.github/workflows/`: CI/CD con GitHub Actions
 
 ## Configuración
-- Base URL: https://testautomationpractice.blogspot.com
+
+- Base URL: <https://testautomationpractice.blogspot.com>
 - Headless: false (para práctica visual)
 - Workers: 1 (para estabilidad en práctica)
 
 ## CI/CD
+
 Incluye workflow de GitHub Actions que ejecuta tests automáticamente en push/PR.
