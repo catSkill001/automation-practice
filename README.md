@@ -2,11 +2,11 @@
 
 Proyecto de práctica para automatización de pruebas web usando Playwright.
 
-## 🎯 Estás en la rama de práctica
+## Estás en la rama de práctica
 
 Esta es la rama **`template`** con tests incompletos. Sigue estos pasos:
 
-### 📋 Instrucciones
+### Instrucciones
 
 1. **Crea tu rama de práctica:**
 
