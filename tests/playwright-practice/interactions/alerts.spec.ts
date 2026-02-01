@@ -247,11 +247,7 @@ test.describe('Alerts & Popups', () => {
      * await dialog.dismiss();
      * 
      * // Leer el valor por defecto del prompt:
-       * console.log('Default:', dialog.defaultValue());
-       */
-    });
-    
-    // Hacer click en el botón que dispara prompt()
-    await page.getByText('Prompt Alert').click();
+     * console.log('Default:', dialog.defaultValue());
+     */
   });
 });
