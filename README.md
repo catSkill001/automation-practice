@@ -25,7 +25,7 @@ npx playwright test --ui
 
 ## Structure
 
-```
+```text
 tests/
 pages/
 playwright.config.ts
