@@ -65,20 +65,46 @@ npx playwright show-report
 
 ## Estructura del proyecto
 
-- `tests/`: Archivos de pruebas
-  - `smoke.spec.ts`: Test básico de carga de página
-  - `alerts.spec.ts`: Manejo de alerts, confirms y prompts
-  - `doubleclick.spec.ts` y `doubleclick-copy.spec.ts`: Interacciones de doble click
-  - `dragdrop.spec.ts`: Drag and drop
-  - `table.spec.ts`: Validación de tablas web
-- `playwright.config.ts`: Configuración de Playwright
+### Tests organizados por funcionalidad
+
+- `tests/`: Suite completa de pruebas automatizadas
+  - **Básicos:**
+    - `smoke.spec.ts`: Test básico de carga de página
+  - **Diálogos del navegador:**
+    - `alerts.spec.ts`: Manejo de alerts, confirms y prompts (4 tests)
+  - **Formularios:**
+    - `forms.spec.ts`: Inputs, textarea, checkboxes, radio buttons (4 tests)
+    - `dropdowns.spec.ts`: Selects y dropdowns (3 tests)
+    - `datepicker.spec.ts`: Date picker y selección de fechas (3 tests)
+  - **Interacciones:**
+    - `doubleclick.spec.ts`: Interacciones de doble click
+    - `dragdrop.spec.ts`: Drag and drop
+    - `hover.spec.ts`: Efectos hover y tooltips (3 tests)
+  - **Componentes UI:**
+    - `table.spec.ts`: Validación de tablas web
+    - `accordion.spec.ts`: Accordion expand/collapse (3 tests)
+    - `tabs.spec.ts`: Navegación entre tabs (2 tests)
+    - `sliders.spec.ts`: Sliders y controles deslizantes (3 tests)
+    - `resizable.spec.ts`: Elementos redimensionables (2 tests)
+  - **Avanzados:**
+    - `frames.spec.ts`: Trabajo con iframes (3 tests)
+    - `windows.spec.ts`: Múltiples ventanas y tabs (3 tests)
+
+**Total: 15 archivos de test con cobertura completa de la página**
+
+### Archivos de configuración
+
+- `playwright.config.ts`: Configuración de Playwright con soporte para entornos
+- `.env.example`: Plantilla para variables de entorno
 - `.github/workflows/`: CI/CD con GitHub Actions
 
 ## Configuración
 
-- Base URL: <https://testautomationpractice.blogspot.com>
-- Headless: false (para práctica visual)
-- Workers: 1 (para estabilidad en práctica)
+- **Base URL**: <https://testautomationpractice.blogspot.com>
+- **Headless**: false (para práctica visual), true en CI
+- **Workers**: 1 (para estabilidad en práctica)
+- **Entornos**: Soporte para dev, qa, stage, prod (configurable en `.env`)
+- **Timeout**: 30 segundos por defecto
 
 ## CI/CD
 
