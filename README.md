@@ -12,6 +12,7 @@ Este repositorio tiene dos ramas con propósitos específicos:
 ### 📝 Flujo de Trabajo para Practicar
 
 1. Crear rama desde `template`:
+
    ```bash
    git checkout template
    git checkout -b practice/nombre-ejercicio
@@ -20,6 +21,7 @@ Este repositorio tiene dos ramas con propósitos específicos:
 2. Completar los tests siguiendo los TODOs
 
 3. Push de tu rama:
+
    ```bash
    git add .
    git commit -m "Complete ejercicio"
