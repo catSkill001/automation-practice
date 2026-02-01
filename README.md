@@ -2,14 +2,14 @@
 
 Proyecto de práctica para automatización de pruebas web usando Playwright.
 
-## 🌿 Estructura de Ramas
+## Estructura de Ramas
 
 Este repositorio tiene dos ramas con propósitos específicos:
 
 - **`main`** (actual): Implementación completa con todos los tests resueltos. Úsala como referencia para ver las soluciones.
 - **`template`**: Tests con estructura vacía y comentarios TODO. Úsala como base para practicar.
 
-### 📝 Flujo de Trabajo para Practicar
+### Flujo de Trabajo para Practicar
 
 1. Crear rama desde `template`:
 
