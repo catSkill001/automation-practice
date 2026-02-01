@@ -369,6 +369,12 @@ Manejo de múltiples tabs/ventanas y contenido dinámico:
 
 ```typescript
 const [newPage] = await Promise.all([
+  context.waitForEvent('page'),
+  page.getByRole('link', { name: 'Open New Tab' }).click()
+]);
+await newPage.waitForLoadState();
+```
+
 ### Shadow DOM
 
 Acceso a elementos encapsulados en Shadow Root:
@@ -376,11 +382,6 @@ Acceso a elementos encapsulados en Shadow Root:
 - Usar `evaluate()` o `evaluateHandle()` para acceder al shadowRoot
 - Buscar elementos con `shadowRoot.querySelector()`
 - La página de práctica tiene Shadow DOM real en `#shadow_host`
-
-**Ejemplo:**
-```typescript
-const value = await page.evaluate(() => {)`
-- El ID real en la página de práctica es `#shadow_host`
 
 **Ejemplo:**
 
