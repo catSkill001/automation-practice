@@ -1,12 +1,42 @@
 # Playwright Practice Suite - Template Branch
 
-## RAMA TEMPLATE - Para Práctica
+## 🎯 ¿Qué es esto?
 
-Esta es la **rama template** del proyecto. Los tests están en formato TODO para que practiques escribiendo el código desde cero.
+Este proyecto es una **suite de práctica de Playwright** con **53 ejercicios** organizados en formato TODO para que aprendas escribiendo código desde cero.
 
-**¿Buscas las respuestas?** → Revisa la rama `main`
+### 🔄 Dos Ramas, Dos Propósitos
 
-## Descripción
+- **📝 Rama `template`** (estás aquí) → Para practicar
+  - Todos los tests tienen TODOs con instrucciones paso a paso
+  - Escribes el código tú mismo siguiendo las guías
+  - Ideal para aprender haciendo
+
+- **✅ Rama `main`** → Soluciones completas
+  - Todos los tests implementados y funcionando
+  - Úsala para comparar tus respuestas
+  - Referencia cuando te atores
+
+### ⚡ Instalación en 1 Comando
+
+```bash
+git clone https://github.com/catSkill001/automation-practice.git
+cd automation-practice
+git checkout template
+npm run setup  # ¡Instala TODO automáticamente!
+```
+
+Esto instala:
+
+- ✅ Dependencias de npm
+- ✅ Browsers de Playwright (Chromium, Firefox, WebKit)
+- ✅ Dependencias del sistema
+- ✅ Todo listo para practicar
+
+**Cuando abras el proyecto en VS Code**, verás una notificación para instalar las extensiones recomendadas (Playwright, ESLint, Prettier, GitLens). ¡Acéptalas!
+
+---
+
+## 📚 Descripción del Contenido
 
 Suite de tests end-to-end con **53 casos de prueba** organizados en 10 categorías. Cada test incluye:
 
@@ -16,21 +46,21 @@ Suite de tests end-to-end con **53 casos de prueba** organizados en 10 categorí
 - Ejemplos de sintaxis y hints de APIs de Playwright
 - Espacios para escribir tu código
 
-### Tests Básicos (31 ejercicios - TC-001 a TC-031)
+### Tests Básicos (22 ejercicios - TC-001 a TC-023)
 
-- **Locators** (7 tests): 7 estrategias de localización (getByRole, getByText, getByLabel, getByPlaceholder, getByAltText, getByTitle, getByTestId)
-- **Tables** (2 tests): Interacción con tablas estáticas y con paginación
-- **Interactions** (8 tests): Alertas, mouse actions, drag & drop, sliders
-- **Files** (4 tests): Upload de archivos individuales y múltiples
-- **Navigation** (4 tests): Tabs, ventanas y contenido dinámico
-- **Advanced DOM** (8 tests): iframes (3 tests - TC-024 a TC-026) y Shadow DOM (5 tests - TC-027 a TC-031) para entrevistas técnicas
+- **Locators** (10 tests - TC-001 a TC-010): 7 estrategias de localización (getByRole, getByText, getByLabel, getByPlaceholder, getByAltText, getByTitle, getByTestId)
+- **Tables** (2 tests - TC-011 a TC-012): Interacción con tablas estáticas y con paginación
+- **Interactions** (5 tests - TC-013 a TC-019): Alertas, mouse actions, drag & drop, sliders
+- **Files** (2 tests - TC-020 a TC-021): Upload de archivos individuales y múltiples
+- **Navigation** (2 tests - TC-022 a TC-023): Tabs, ventanas y contenido dinámico
+- **Advanced DOM** (8 tests - TC-024 a TC-031): iframes (3 tests - TC-024 a TC-026) y Shadow DOM (5 tests - TC-027 a TC-031) para entrevistas técnicas
 
-### Features Avanzadas (22 ejercicios - TC-032 a TC-053)
+### Features Avanzadas (31 ejercicios - TC-032 a TC-053)
 
 - **API Tests** (5 tests - TC-032 a TC-036): Testing de APIs REST sin browser
 - **Visual Regression** (5 tests - TC-037 a TC-041): Detección de cambios visuales con screenshots
 - **Accessibility** (6 tests - TC-042 a TC-047): Validación WCAG con axe-core
-- **Page Object Model** (6 tests - TC-048 a TC-053): Patrón de diseño para mantenibilidad
+- **Page Object Model** (6 tests - TC-048 a TC-053): Patrón de diseño para mantenibilidad + implementar page objects
 
 ## Prerrequisitos
 
@@ -58,34 +88,63 @@ El proyecto incluye un archivo `.vscode/extensions.json` que recomienda automát
 
 VS Code te sugerirá instalarlas al abrir el proyecto.
 
-## Instalación
+## 🚀 Instalación Rápida
 
-### 1. Clonar el repositorio
+### Opción 1: Instalación Automática (Recomendado)
 
 ```bash
+# 1. Clonar y cambiar a rama template
 git clone https://github.com/catSkill001/automation-practice.git
 cd automation-practice
+git checkout template
+
+# 2. Instalación automática (todo en un comando)
+npm run setup
 ```
 
-### 2. Instalar dependencias
+Esto instala:
+
+- ✅ Todas las dependencias de npm
+- ✅ Browsers de Playwright (Chromium, Firefox, WebKit)
+- ✅ Dependencias del sistema
+
+### Opción 2: Instalación Manual
 
 ```bash
+# Paso 1: Instalar dependencias
 npm install
+
+# Paso 2: Instalar browsers
+npx playwright install --with-deps
+
+# Paso 3: Verificar instalación
+npx playwright --version
 ```
 
-### 3. Instalar browsers de Playwright
+### 📋 Instalación Rápida (sin system dependencies)
+
+Si prefieres instalar solo los browsers sin dependencias del sistema:
 
 ```bash
-npx playwright install
+npm run setup:fast
 ```
 
-Esto descarga Chromium, Firefox y WebKit.
+### 🔌 Extensiones de VS Code
 
-### 4. Verificar instalación
+Al abrir el proyecto en VS Code, verás una notificación para instalar extensiones recomendadas. ¡Acéptalas!
 
-```bash
-npx playwright test --version
-```
+**Extensiones incluidas:**
+
+- Playwright Test for VSCode
+- ESLint
+- Prettier
+- GitLens
+
+---
+
+**📖 Para instrucciones detalladas de instalación y troubleshooting, ve a [SETUP.md](SETUP.md)**
+
+---
 
 ## Cómo usar esta rama
 
@@ -101,15 +160,12 @@ npx playwright install
 Abre cualquier archivo `.spec.ts` en la carpeta `tests/playwright-practice/` y sigue los TODOs:
 
 ```typescript
-test('example test', async ({ page }) => {
+test("example test", async ({ page }) => {
   // TODO: Paso 1 - Navegar a la página
   // Usa page.goto() con la ruta '/p/playwrightpractice.html'
-  
   // Escribe tu código aquí
-  
   // TODO: Paso 2 - Localizar el elemento
   // Usa page.getByRole() apropiado
-  
   // Escribe tu código aquí
 });
 ```
@@ -175,26 +231,26 @@ npx playwright show-report
 
 ### Orden sugerido (de fácil a difícil)
 
-#### Nivel 1: Fundamentos (Tests básicos)
+#### Nivel 1: Fundamentos (22 tests básicos - TC-001 a TC-023)
 
-1. **Locators** (7 tests) - Empieza aquí
-   - getByRole → getByText → getByLabel → getByPlaceholder
-   - getByAltText → getByTitle → getByTestId
+1. **Locators** (10 tests - TC-001 a TC-010) - Empieza aquí
+   - getByRole (2 tests) → getByText (2 tests) → getByLabel (2 tests)
+   - getByPlaceholder → getByAltText → getByTitle → getByTestId
 
-2. **Interactions** (8 tests) - Acciones básicas
-   - alerts → mouse-actions → drag-drop → slider
-
-3. **Tables** (2 tests) - Datos tabulares
+2. **Tables** (2 tests - TC-011 a TC-012) - Datos tabulares
    - Tabla estática → Tabla con paginación
 
-4. **Files** (4 tests) - Upload de archivos
+3. **Interactions** (5 tests - TC-013 a TC-019) - Acciones básicas
+   - alerts (3 tests) → mouse-actions (2 tests) → drag-drop → slider
+
+4. **Files** (2 tests - TC-020 a TC-021) - Upload de archivos
    - Single file → Multiple files
 
-5. **Navigation** (4 tests) - Navegación avanzada
-   - windows-tabs → dynamic-content
+5. **Navigation** (2 tests - TC-022 a TC-023) - Navegación avanzada
+   - windows-tabs → contenido dinámico
 
-6. **Advanced DOM** (8 tests) - Conceptos para entrevistas
-   - frames (TC-024 a TC-026) → shadow-dom (TC-027 a TC-031)
+6. **Advanced DOM** (8 tests - TC-024 a TC-031) - Conceptos para entrevistas
+   - frames (3 tests: TC-024 a TC-026) → shadow-dom (5 tests: TC-027 a TC-031)
 
 #### Nivel 2: Features Avanzadas
 
@@ -273,13 +329,11 @@ Cada test en esta rama template sigue este formato:
 |   APIs y conceptos importantes explicados
 |--------------------------------------------------------------------------
 */
-test('nombre del test', async ({ page }) => {
+test("nombre del test", async ({ page }) => {
   // TODO: Paso 1 - Descripción clara
   // Instrucciones de qué API usar
   // Ejemplo de sintaxis
-  
   // Escribe tu código aquí
-  
   // TODO: Paso 2 - Siguiente acción
   // ...
 });
@@ -298,8 +352,8 @@ Interacción con contenido dentro de iframes:
 **Ejemplo:**
 
 ```typescript
-const frame = page.frameLocator('#my-iframe');
-await frame.locator('input').fill('test');
+const frame = page.frameLocator("#my-iframe");
+await frame.locator("input").fill("test");
 ```
 
 Playwright ofrece múltiples estrategias de localización semánticas que priorizan accesibilidad:
@@ -315,9 +369,9 @@ Playwright ofrece múltiples estrategias de localización semánticas que priori
 **Ejemplo:**
 
 ```typescript
-await page.getByRole('button', { name: 'Submit' }).click();
-await page.getByLabel('Email').fill('test@test.com');
-await page.getByPlaceholder('Search...').fill('Playwright');
+await page.getByRole("button", { name: "Submit" }).click();
+await page.getByLabel("Email").fill("test@test.com");
+await page.getByPlaceholder("Search...").fill("Playwright");
 ```
 
 ### Tables
@@ -327,10 +381,10 @@ Navegación y extracción de datos desde tablas HTML con paginación.
 **Ejemplo:**
 
 ```typescript
-const table = page.locator('#productTable tbody tr');
+const table = page.locator("#productTable tbody tr");
 const rows = await table.count();
 for (let i = 0; i < rows; i++) {
-  const name = await table.nth(i).locator('td').nth(1).textContent();
+  const name = await table.nth(i).locator("td").nth(1).textContent();
   console.log(name);
 }
 ```
@@ -347,11 +401,11 @@ Simulación de acciones complejas:
 **Ejemplo:**
 
 ```typescript
-page.on('dialog', async dialog => {
+page.on("dialog", async (dialog) => {
   console.log(dialog.message());
   await dialog.accept();
 });
-await page.getByRole('button', { name: 'Alert' }).click();
+await page.getByRole("button", { name: "Alert" }).click();
 ```
 
 ### File Upload
@@ -361,8 +415,8 @@ Upload de archivos usando `setInputFiles()`:
 **Ejemplo:**
 
 ```typescript
-await page.locator('#fileInput').setInputFiles('path/to/file.pdf');
-await page.locator('#multipleFiles').setInputFiles(['file1.jpg', 'file2.png']);
+await page.locator("#fileInput").setInputFiles("path/to/file.pdf");
+await page.locator("#multipleFiles").setInputFiles(["file1.jpg", "file2.png"]);
 ```
 
 ### Navigation
@@ -373,8 +427,8 @@ Manejo de múltiples tabs/ventanas y contenido dinámico:
 
 ```typescript
 const [newPage] = await Promise.all([
-  context.waitForEvent('page'),
-  page.getByRole('link', { name: 'Open New Tab' }).click()
+  context.waitForEvent("page"),
+  page.getByRole("link", { name: "Open New Tab" }).click(),
 ]);
 await newPage.waitForLoadState();
 ```
@@ -391,10 +445,10 @@ Acceso a elementos encapsulados en Shadow Root:
 
 ```typescript
 const shadowContent = await page.evaluate(() => {
-  const shadowHost = document.querySelector('#shadow_host');
+  const shadowHost = document.querySelector("#shadow_host");
   const shadowRoot = shadowHost.shadowRoot;
   const input = shadowRoot.querySelector('input[type="text"]');
-  input.value = 'Test';
+  input.value = "Test";
   return input.value;
 });
 ```
@@ -566,9 +620,9 @@ npm install --save-dev @axe-core/playwright
 
 **Archivos a implementar:**
 
-1. `pages/base.page.ts` - Clase base con funcionalidad común
-2. `pages/practice.page.ts` - Page object con locators de la página
-3. `tests/playwright-practice/pom/pom-examples.spec.ts` - Tests usando POM
+1. `pages/base.page.ts` - ✅ Ya implementado (clase base con funcionalidad común)
+2. `pages/practice.page.ts` - 🔨 TODO: Implementar locators y métodos (instrucciones incluidas)
+3. `tests/playwright-practice/pom/pom-examples.spec.ts` - 🔨 TODO: Completar 6 tests usando POM
 
 **Ejercicios:**
 

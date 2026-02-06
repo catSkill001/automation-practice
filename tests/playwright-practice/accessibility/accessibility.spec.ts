@@ -139,10 +139,17 @@ test.describe('Accessibility Testing', () => {
   |--------------------------------------------------------------------------
   */
   test('TC-043: WCAG Level A and AA compliance', async ({ page }) => {
-    await page.goto('/p/playwrightpractice.html');
-    await page.waitForLoadState('networkidle');
+    // TODO: Paso 1 - Navegar a la página
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto('/p/playwrightpractice.html');
     
-    // TODO: Paso 1 - Ejecutar scan con tags WCAG
+    
+    // TODO: Paso 2 - Esperar carga completa
+    // Usa page.waitForLoadState('networkidle')
+    // Sintaxis: await page.waitForLoadState('networkidle');
+    
+    
+    // TODO: Paso 3 - Ejecutar scan con tags WCAG
     // Usa new AxeBuilder({ page }).withTags() para especificar:
     // - ['wcag2a', 'wcag2aa']: Valida ambos niveles
     // Luego ejecuta analyze()
@@ -205,10 +212,17 @@ test.describe('Accessibility Testing', () => {
   |--------------------------------------------------------------------------
   */
   test('TC-044: Form accessibility validation', async ({ page }) => {
-    await page.goto('/p/playwrightpractice.html');
-    await page.waitForLoadState('networkidle');
+    // TODO: Paso 1 - Navegar a la página
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto('/p/playwrightpractice.html');
     
-    // TODO: Paso 1 - Ejecutar scan solo en formularios
+    
+    // TODO: Paso 2 - Esperar carga completa
+    // Usa page.waitForLoadState('networkidle')
+    // Sintaxis: await page.waitForLoadState('networkidle');
+    
+    
+    // TODO: Paso 3 - Ejecutar scan solo en formularios
     // Usa .include() para escanear solo dentro de elementos form
     // Sintaxis: const results = await new AxeBuilder({ page })
     //   .include('form')
@@ -273,10 +287,17 @@ test.describe('Accessibility Testing', () => {
   |--------------------------------------------------------------------------
   */
   test('TC-045: Exclude third-party elements from scan', async ({ page }) => {
-    await page.goto('/p/playwrightpractice.html');
-    await page.waitForLoadState('networkidle');
+    // TODO: Paso 1 - Navegar a la página
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto('/p/playwrightpractice.html');
     
-    // TODO: Paso 1 - Ejecutar scan excluyendo terceros
+    
+    // TODO: Paso 2 - Esperar carga completa
+    // Usa page.waitForLoadState('networkidle')
+    // Sintaxis: await page.waitForLoadState('networkidle');
+    
+    
+    // TODO: Paso 3 - Ejecutar scan excluyendo elementos de terceros
     // Esta página tiene ads y widgets de Blogger
     // Excluye elementos comunes de terceros:
     // - .sidebar (ads de Blogger)
@@ -341,10 +362,17 @@ test.describe('Accessibility Testing', () => {
   |--------------------------------------------------------------------------
   */
   test('TC-046: Color contrast validation', async ({ page }) => {
-    await page.goto('/p/playwrightpractice.html');
-    await page.waitForLoadState('networkidle');
+    // TODO: Paso 1 - Navegar a la página
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto('/p/playwrightpractice.html');
     
-    // TODO: Paso 1 - Ejecutar scan de contraste
+    
+    // TODO: Paso 2 - Esperar carga completa
+    // Usa page.waitForLoadState('networkidle')
+    // Sintaxis: await page.waitForLoadState('networkidle');
+    
+    
+    // TODO: Paso 3 - Ejecutar scan de contraste
     // Usa .withTags(['wcag2aa']) que incluye color-contrast
     // O usa .withRules(['color-contrast']) para solo esa regla
     // Sintaxis: const results = await new AxeBuilder({ page })
@@ -420,10 +448,17 @@ test.describe('Accessibility Testing', () => {
   |--------------------------------------------------------------------------
   */
   test('TC-047: Detailed accessibility report', async ({ page }) => {
-    await page.goto('/p/playwrightpractice.html');
-    await page.waitForLoadState('networkidle');
+    // TODO: Paso 1 - Navegar a la página
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto('/p/playwrightpractice.html');
     
-    // TODO: Paso 1 - Ejecutar scan completo
+    
+    // TODO: Paso 2 - Esperar carga completa
+    // Usa page.waitForLoadState('networkidle')
+    // Sintaxis: await page.waitForLoadState('networkidle');
+    
+    
+    // TODO: Paso 3 - Ejecutar scan completo
     // const results = await new AxeBuilder({ page }).analyze();
     
     

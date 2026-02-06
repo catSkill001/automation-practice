@@ -125,8 +125,14 @@ test.describe('Visual Regression Testing', () => {
   */
   test('TC-038: Element screenshot comparison', async ({ page }) => {
     // TODO: Paso 1 - Navegar a la página
-    await page.goto('/p/playwrightpractice.html');
-    await page.waitForLoadState('networkidle');
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto('/p/playwrightpractice.html');
+    
+    
+    // TODO: Paso 1b - Esperar carga completa
+    // Usa page.waitForLoadState('networkidle')
+    // Sintaxis: await page.waitForLoadState('networkidle');
+    
     
     // TODO: Paso 2 - Localizar el header de la página
     // Usa page.locator() para encontrar el elemento con id 'header'
@@ -180,8 +186,15 @@ test.describe('Visual Regression Testing', () => {
   |--------------------------------------------------------------------------
   */
   test('TC-039: Screenshot with masked dynamic elements', async ({ page }) => {
-    await page.goto('/p/playwrightpractice.html');
-    await page.waitForLoadState('networkidle');
+    // TODO: Paso 1 - Navegar a la página
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto('/p/playwrightpractice.html');
+    
+    
+    // TODO: Paso 1b - Esperar carga completa
+    // Usa page.waitForLoadState('networkidle')
+    // Sintaxis: await page.waitForLoadState('networkidle');
+    
     
     // TODO: Paso 1 - Identificar elementos dinámicos
     // En esta página, podemos enmascarar:
@@ -242,8 +255,15 @@ test.describe('Visual Regression Testing', () => {
   |--------------------------------------------------------------------------
   */
   test('TC-040: Screenshot with custom threshold', async ({ page }) => {
-    await page.goto('/p/playwrightpractice.html');
-    await page.waitForLoadState('networkidle');
+    // TODO: Paso 1 - Navegar a la página
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto('/p/playwrightpractice.html');
+    
+    
+    // TODO: Paso 1b - Esperar carga completa
+    // Usa page.waitForLoadState('networkidle')
+    // Sintaxis: await page.waitForLoadState('networkidle');
+    
     
     // TODO: Paso 1 - Capturar con threshold alto
     // Usa expect(page).toHaveScreenshot() con:
@@ -310,8 +330,15 @@ test.describe('Visual Regression Testing', () => {
   |--------------------------------------------------------------------------
   */
   test('TC-041: Screenshot of specific UI state (modal opened)', async ({ page }) => {
-    await page.goto('/p/playwrightpractice.html');
-    await page.waitForLoadState('networkidle');
+    // TODO: Paso 1 - Navegar a la página
+    // Usa page.goto() con la ruta '/p/playwrightpractice.html'
+    // Sintaxis: await page.goto('/p/playwrightpractice.html');
+    
+    
+    // TODO: Paso 1b - Esperar carga completa
+    // Usa page.waitForLoadState('networkidle')
+    // Sintaxis: await page.waitForLoadState('networkidle');
+    
     
     // TODO: Paso 1 - Configurar handler para el alert
     // En esta página no hay modals reales, pero podemos simular

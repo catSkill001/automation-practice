@@ -1,9 +1,11 @@
 {
-  "name": "practices",
+  "name": "playwright-practice-suite",
   "version": "1.0.0",
-  "description": "",
+  "description": "Suite de práctica con 53 tests de Playwright organizados por categoría",
   "main": "index.js",
   "scripts": {
+    "setup": "npm install && npx playwright install --with-deps",
+    "setup:fast": "npm install && npx playwright install",
     "test": "playwright test",
     "test:dev": "cross-env ENVIRONMENT=dev playwright test",
     "test:qa": "cross-env ENVIRONMENT=qa playwright test",
@@ -11,7 +13,16 @@
     "test:prod": "cross-env ENVIRONMENT=prod playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
-    "test:report": "playwright show-report"
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:locators": "playwright test locators --headed",
+    "test:tables": "playwright test tables --headed",
+    "test:interactions": "playwright test interactions --headed",
+    "test:files": "playwright test files --headed",
+    "test:api": "playwright test api",
+    "test:visual": "playwright test visual",
+    "test:accessibility": "playwright test accessibility",
+    "test:pom": "playwright test pom --headed"
   },
   "keywords": [],
   "author": "",
